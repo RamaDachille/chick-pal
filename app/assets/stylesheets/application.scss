@@ -24,5 +24,7 @@ body {
 	letter-spacing: normal;
 	line-height: 18px;
 	-webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-

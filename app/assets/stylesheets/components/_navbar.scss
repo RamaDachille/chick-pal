@@ -155,3 +155,29 @@ overflow: visible;
 		}
   }
 // }
+
+
+footer {
+	background: var(--grey-light);
+	border-top: 1px solid var(--grey-med);
+	padding: 13px 0;
+  margin-top: auto;
+  margin-right: 190px;
+
+	.footer-container {
+		max-width: 1200px;
+		display: flex;
+		margin: auto;
+		justify-content: space-between;
+	}
+	ul {
+		list-style-type: none;
+		padding-left: 0;
+		li {
+      color: var(--grey-text-light);
+      display: inline;
+			margin-bottom: 10px;
+			font-family: 'Circular Std', sans-serif;
+		}
+  }
+}
