@@ -10,3 +10,21 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: rgb(34, 34, 34);
+	font-family: 'Circular Book';
+	margin: 0;
+	font-size: 14px;
+	letter-spacing: normal;
+	line-height: 18px;
+	-webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
