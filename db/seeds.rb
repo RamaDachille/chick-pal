@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "cleaning DB"
+
+User.destroy_all
+
+puts "DB preparation"
+puts "creating Users"
+
+10.times User.new(first_name:
+                  last_name:
+                  email:
+                  password:
+                  biography:
+                  )
+
+
+puts "creating Chickens"
+
+20.times
+
+puts "👩🏻‍🦳👨🏿‍🦱 and 🐔 have been sucessfuly created "
