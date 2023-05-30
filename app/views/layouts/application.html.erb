@@ -14,52 +14,8 @@
   </head>
 
   <body>
-
-    <div class="container">
-
-    
-    <%# Navbar %>
-    <header class="header">
-      <div class="header__logo">
-          <%= image_tag "ChickPals.svg", id: "logo" %>
-      </div>
-        <div class="header__search">
-          <button><strong>Selected breed</strong></button>
-          <span></span>
-          <button><strong>29 May - 2 June</strong></button>
-          <span></span>
-          <button>
-            <strong> Female </strong>
-            <div class="header__searchIcon">
-              <%= image_tag("searchIcon.svg") %>
-            </div>
-          </button>
-        </div>
-      <div class="header__nav">
-        <a href="" class="header__nav__button header__nav__button-greyHover"><strong>Rent your chicken</strong></a>
-        <button class="header__nav__button header__nav__button-account">
-          <%= image_tag("icons8-menu.svg") %>
-          <%= image_tag("account.svg") %>
-        </button>
-      </div>
-    </header>
-
-    <%# Content %>
+    <%= render "shared/navbar" %>
     <%= yield %>
-
-
-    <%# <p class="notice"><%= notice %>
-    <%# <p class="alert"><%= alert %>
-    </div>
-
-    <%# Footer %>
-    <footer>
-			<div class="footer-container">
-				<div class="footer-list">
-					<ul>
-          <li>&copy; MeetWearTeam</li>
-					</ul>
-				</div>
-		</footer>
+    <%= render "shared/footer" %>
   </body>
 </html>
