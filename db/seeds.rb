@@ -40,7 +40,8 @@ puts "creating Chickens"
               egg_capacity: rand(1..5),
               gender: Faker::Gender.binary_type,
               noise_level: ["low", "medium", "high"].sample,
-              description: Faker::Coffee.notes
+              description: Faker::Coffee.notes,
+              price: rand(10..100)
               )
 end
 
