@@ -1,7 +1,7 @@
 <h1>New view works</h1>
 
 <%= simple_form_for [@chicken, @booking] do |f| %>
-  <%= f.association :chicken %>
+  <%# <%= f.association :chicken %>
   <%= f.input :start_date, as: :string %>
   <%= f.input :end_date, as: :string %>
   <%= f.submit "Book", class: "btn btn-primary" %>
