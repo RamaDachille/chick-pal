@@ -14,74 +14,8 @@
   </head>
 
   <body>
-    <%# Navbar %>
-    <header class="header">
-      <div class="header__logo">
-          <%= image_tag "ChickPals.svg", id: "logo" %>
-      </div>
-        <div class="header__search">
-          <button><strong>Selected breed</strong></button>
-          <span></span>
-          <button><strong>29 May - 2 June</strong></button>
-          <span></span>
-          <button>
-            <strong> Female </strong>
-            <div class="header__searchIcon">
-              <%= image_tag("searchIcon.svg") %>
-            </div>
-          </button>
-        </div>
-      <div class="header__nav">
-        <a href="" class="header__nav__button header__nav__button-greyHover"><strong>Rent your chicken</strong></a>
-        <button class="header__nav__button header__nav__button-account">
-          <%= image_tag("icons8-menu.svg") %>
-          <%= image_tag("account.svg") %>
-        </button>
-      </div>
-    </header>
-
-    <%# Content %>
+    <%= render "shared/navbar" %>
     <%= yield %>
-    <div class="container chick-pal-content">
-      <div class="cards">
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      <%= render "layouts/card" %>
-      </div>
-    </div >
-
-    <%# <p class="notice"><%= notice %>
-    <%# <p class="alert"><%= alert %>
-
-
-      <%# <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt asperiores quasi, ullam rerum explicabo dignissimos nam accusantium sit ipsa ipsam consectetur recusandae quaerat quidem, fugit rem eos nostrum? Saepe?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt asperiores quasi, ullam rerum explicabo dignissimos nam accusantium sit ipsa ipsam consectetur recusandae quaerat quidem, fugit rem eos nostrum? Saepe?Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt asperiores quasi, ullam rerum explicabo dignissimos nam accusantium sit ipsa ipsam consectetur recusandae quaerat quidem, fugit rem eos nostrum? Saepe?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt asperiores quasi, ullam rerum explicabo dignissimos nam accusantium sit ipsa ipsam consectetur recusandae quaerat quidem, fugit rem eos nostrum? Saepe?Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt asperiores quasi, ullam rerum explicabo dignissimos nam accusantium sit ipsa ipsam consectetur recusandae quaerat quidem, fugit rem eos nostrum? Saepe?
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt asperiores quasi, ullam rerum explicabo dignissimos nam accusantium sit ipsa ipsam consectetur recusandae quaerat quidem, fugit rem eos nostrum? Saepe?Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sunt asperiores quasi, ullam rerum explicabo dignissimos nam accusantium sit ipsa ipsam consectetur recusandae quaerat quidem, fugit rem eos nostrum? Saepe?
-      </h1> %>
-    </div>
-
-    <%# Footer %>
-    <footer>
-			<div class="footer-container">
-				<div class="footer-list">
-					<ul>
-          <li>&copy; MeetWearTeam</li>
-					</ul>
-				</div>
-		</footer>
+    <%= render "shared/footer" %>
   </body>
 </html>

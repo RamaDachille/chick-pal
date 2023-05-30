@@ -1,0 +1,23 @@
+      <%= link_to  chicken_path(chicken.id) do %>
+ <div class="card">
+  <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1612170153139-6f881ff067e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')" alt="Card image">
+  </div>
+
+  <div class="card-body">
+    <div class="top-text">
+      <p class="card-title"><strong>Chicken Name</strong></p>
+      <p class="card-breed"><strong>Breed</strong></p>
+    </div>
+
+    <div class="mid-text">
+      <p class="card-age"> <%= chicken.gender.capitalize %>, <%= chicken.age %> years old</p>
+      <p class="noise level"><%= chicken.noise_level%></p>
+    </div>
+
+    <div>
+      <p class="price"><u><%= chicken.price %>€</u></p>
+    </div>
+
+  </div>
+</div>
+      <% end %>
