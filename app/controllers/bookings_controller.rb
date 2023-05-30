@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @chicken = Chicken.find(params[:chicken_id])
     @booking = Booking.new
   end
 
