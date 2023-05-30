@@ -34,7 +34,7 @@ joanna.save!
 end
 
 
-puts "creating Chickens" 
+puts "creating Chickens"
 
 20.times do
   chicken = Chicken.new(age: rand(1..10),
@@ -44,7 +44,8 @@ puts "creating Chickens"
                         gender: ["female", "male"].sample,
                         noise_level: ["low", "medium", "high"].sample,
                         description: Faker::Coffee.notes,
-                        price: rand(10..100)
+                        price: rand(10..100),
+                        name: Faker::Dessert.topping
                         )
   chicken.save!
 end
