@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   resources :chickens, except: %i[edit update] do
     resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[show update]
+  resources :bookings, only: %i[show edit update]
 end

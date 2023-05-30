@@ -18,10 +18,9 @@ class ChickensController < ApplicationController
 
   def create
     @chicken = Chicken.new(chicken_params)
-    @chicken.save
-    # redirect_to chicken_path(@chicken)
-    if @chicken.save
-      redirect_to @chicken, notice: "Chicken was successfully created."
+    @chicken.user_id = current_user.id
+    if @chicken.save!
+      redirect_to chicken_path(@chicken), notice: "Chicken was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -30,6 +29,6 @@ class ChickensController < ApplicationController
   private
 
   def chicken_params
-    params.require(:chicken).permit(:age, :breed, :egg_capacity, :gender, :noise_level)
+    params.require(:chicken).permit(:age, :breed, :egg_capacity, :gender, :noise_level, :price)
   end
 end
