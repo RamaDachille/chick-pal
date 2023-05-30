@@ -1,3 +1,7 @@
-
-
-
+<div class="container chick-pal-content">
+  <div class="cards">
+    <% @chickens.each do |chicken| %>
+      <%= render "chickens/chicken", chicken: chicken %>
+    <% end %>
+  </div>
+</div>
