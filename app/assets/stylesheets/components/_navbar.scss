@@ -1,36 +1,3 @@
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: white;
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
-
-
-// @font-face {
-// 	font-family: 'Circular Medium';
-// 	src: url(/fonts/circular/circular-medium.ttf);
-// }
-
-// @font-face {
-// 	font-family: 'Circular Book';
-// 	src: url(/fonts/circular/circular-book.otf);
-// }
-
-// @font-face {
-// 	font-family: 'Circular Bold';
-// 	src: url(/fonts/circular/circular-bold.otf);
-// }
-
-// @font-face {
-// 	font-family: 'Circular Light';
-// 	src: url(/fonts/circular/circular-light.ttf);
-
 :root {
 	--grey-med: #ddd;
 	--grey-light: #f7f7f7;
@@ -47,8 +14,9 @@ overflow: visible;
 
 .header {
   font-family: 'Circular Std', sans-serif;
+  font-size: 14px;
 	height: 80px;
-	padding: 0 8px;
+	padding: 0 50px;
 	display: flex;
 	align-items: center;
 	box-shadow: rgba(0, 0, 0, 0.08) 0px 1px 12px;
@@ -158,27 +126,31 @@ overflow: visible;
 
 
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 	background: var(--grey-light);
 	border-top: 1px solid var(--grey-med);
-	padding: 13px 0;
   margin-top: auto;
-  margin-right: 190px;
-  width: 100%;
+
 
 	.footer-container {
-		max-width: 1200px;
 		display: flex;
-		margin: auto;
-		justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 	}
+  .footer-list{
+    padding-top: 14px;
+  }
 	ul {
 		list-style-type: none;
 		padding-left: 0;
 		li {
       color: var(--grey-text-light);
       display: inline;
-			margin-bottom: 10px;
 			font-family: 'Circular Std', sans-serif;
+      margin-top: 30px;
 		}
   }
 }
