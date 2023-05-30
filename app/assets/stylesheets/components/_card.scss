@@ -1,18 +1,29 @@
+.container {
+background-color: #FFFFFF;
+}
 .cards {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  line-height: 20px;
 }
 .card {
   width: 300px;
-  border-radius: 5px;
-  border: 1px solid black;
+  border-radius: 12px;
+  // border: 1px solid black;
+  border: #FFFFFF;
+  margin: 10px;
 }
 .card-img {
   width: 300px;
-  height: 250px;
-  border-radius: 5px;
+  height: 300px;
+  border-radius: 12px;
+  object-fit: none;
+  background-size: cover;
+  background-position: left;
+
 }
+
 
 .top-text {
   display: flex;
@@ -22,4 +33,9 @@
 .mid-text {
   display: flex;
   justify-content: space-between;
+}
+
+.card-body {
+  line-height: 20px;
+  font-family: cir;
 }
