@@ -34,7 +34,7 @@ joanna.save!
 end
 
 
-puts "creating Chickens"
+puts "creating Chickens" 
 
 20.times do
   chicken = Chicken.new(age: rand(1..10),

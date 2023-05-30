@@ -1,0 +1,11 @@
+<h1>Chickens</h1>
+<div id="chickens">
+  <div class="cards">
+    <% @chickens.each do |chicken| %>
+      <%= render "chicken", chicken: chicken %>
+      <p>
+        <%= link_to "Show this chicken", chicken_path(chicken.id)%>
+      </p>
+    <% end %>
+  </div>
+</div>
