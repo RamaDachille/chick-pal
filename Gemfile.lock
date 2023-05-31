@@ -133,6 +133,7 @@ GEM
     ffi (1.15.5)
     font-awesome-sass (6.4.0)
       sassc (~> 2.0)
+    geocoder (1.8.1)
     globalid (1.1.0)
       activesupport (>= 5.0)
     http-accept (1.7.0)
@@ -312,6 +313,7 @@ DEPENDENCIES
   dotenv-rails
   faker!
   font-awesome-sass (~> 6.1)
+  geocoder
   importmap-rails
   jbuilder
   pg (~> 1.1)
