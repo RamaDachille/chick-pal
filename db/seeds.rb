@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+require "open-uri"
 
 
 # geochicken = Chicken.new(age: 5, breed: "Andalusian", egg_capacity: 4, gender: "male", noise_level: "low", user_id: 22, description: "Test 123", price: 15, name: "Test Chicken", address: "Rudi-Dutschke-Straße 26, 10969 Berlin")
@@ -57,11 +58,36 @@ joanna.save!
           )
   user.save!
 end
-
-
 puts "creating Chickens"
 
-20.times do
+def create_pics(url, file_name, chicken)
+  file = URI.open(url)
+  chicken.photo.attach(io: file, filename: file_name, content_type: "image/png")
+  return chicken
+end
+
+images = ["https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKENS/ANDALUSIAN/Andalusian-Chicken_Pegasene_Shutterstock-1_pbo0pj.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKENS/ANDALUSIAN/Andalusian1_zwdnxr.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKENS/ANDALUSIAN/Andalusian_Chicken_koqgqd.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKENS/ANDALUSIAN/Andalusian-rooster_o1azee.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526153/CHICKENS/BRAHMA/Screenshot_2023-05-30_at_17.23.42_z2cufr.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526153/CHICKENS/BRAHMA/Screenshot_2023-05-30_at_17.23.53_xajmqa.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526153/CHICKENS/BRAHMA/Screenshot_2023-05-30_at_17.21.25_ncy9me.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526153/CHICKENS/BRAHMA/Screenshot_2023-05-30_at_17.24.12_vsucn1.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527669/CHICKENS/BRAKEL/Braekel_zwerg_teq3ej.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527669/CHICKENS/BRAKEL/Goldbrakel_2021-06-08_David_Selbert__38__xf7fqb.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527669/CHICKENS/BRAKEL/zbrakel-gold1_td34vn.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527669/CHICKENS/BRAKEL/Braekel-Bantams-Chickens-for-sale_xam6yo.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526692/CHICKENS/DUTCH%20BANTHAM/Screenshot_2023-05-30_at_17.32.30_fq1tfa.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526692/CHICKENS/DUTCH%20BANTHAM/Screenshot_2023-05-30_at_17.31.47_uc1p5m.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526691/CHICKENS/DUTCH%20BANTHAM/Screenshot_2023-05-30_at_17.33.24_elluqt.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526691/CHICKENS/DUTCH%20BANTHAM/Screenshot_2023-05-30_at_17.31.11_llaz5v.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527638/CHICKENS/HAMBURGER/Screenshot_2023-05-30_at_17.34.53_ihs8mq.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527637/CHICKENS/HAMBURGER/Screenshot_2023-05-30_at_17.42.29_qgqx5p.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527637/CHICKENS/HAMBURGER/Screenshot_2023-05-30_at_17.36.31_jwqbkk.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527637/CHICKENS/HAMBURGER/Screenshot_2023-05-30_at_17.37.29_bpb9sa.png"]
+
+20.times do |i|
   chicken = Chicken.new(age: rand(1..10),
                         user_id: User.pluck(:id).sample,
                         breed: ["Andalusian", "Brahma", "Brakel", "Dutch Bantam", "Hamburgh"].sample,
@@ -73,8 +99,8 @@ puts "creating Chickens"
                         name: chicken_descriptions.sample,
                         address: ["Goerzallee 189, 14167 Berlin, Germany", "Billy-Wilder-Promenade 49, 14167 Berlin, Germany", "Glinkastraße 20, 10117 Berlin, Germany", "Seegefelder Str. 12, 13597 Berlin, Germany", "Ruppiner Chaussee 351, 13503 Berlin, Germany", "Bisonweg 155, 13503 Berlin, Germany", "Koenigsallee, 14193 Berlin, Germany", "Leipziger Straße, 10117 Berlin, Germany"].sample
                         )
-  chicken.save!
+  final_chicken = create_pics(images[i], chicken.name, chicken)
+  final_chicken.save!
 end
-
 
 puts "👩🏻‍🦳👨🏿‍🦱 and 🐔 have been sucessfuly created "
