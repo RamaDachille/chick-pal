@@ -1,25 +1,28 @@
-      <%= link_to  chicken_path(chicken.id) do %>
+<div id="cardv1">
+<%= link_to  chicken_path(chicken.id) do %>
+  
  <div class="card">
 
   <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path chicken.photo.key, height: 300, crop: :fill %>')"
 >
   </div>
 
-  <div class="card-body">
-    <div class="top-text">
-      <p class="card-title"><strong><%= chicken.name %></strong></p>
-      <p class="card-breed"><strong>Breed</strong></p>
-    </div>
+    <div class="card-body">
+      <div class="top-text">
+        <p class="card-title"><strong>Chicken Name</strong></p>
+        <p class="card-breed"><strong><%= chicken.breed %></strong></p>
+      </div>
 
-    <div class="mid-text">
-      <p class="card-age"> <%= chicken.gender.capitalize %>, <%= chicken.age %> years old</p>
-      <p class="noise level"><%= chicken.noise_level%></p>
-    </div>
+      <div class="mid-text">
+        <p class="card-age"> <%= chicken.gender.capitalize %>, <%= chicken.age %> years old</p>
+        <p class="noise level"><%= chicken.noise_level%></p>
+      </div>
 
-    <div>
-      <p class="price"><u><%= chicken.price %>€</u></p>
-    </div>
+      <div>
+        <p class="price"><u><%= chicken.price %>€ /night</u></p>
+      </div>
 
+    </div>
   </div>
+<% end %>
 </div>
-      <% end %>
