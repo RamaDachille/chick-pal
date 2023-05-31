@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
+require "open-uri"
 
 puts "cleaning DB"
 
@@ -32,11 +33,36 @@ joanna.save!
           )
   user.save!
 end
-
-
 puts "creating Chickens"
 
-20.times do
+def create_pics(url, file_name, chicken)
+  file = URI.open(url)
+  chicken.photo.attach(io: file, filename: file_name, content_type: "image/png")
+  return chicken
+end
+
+images = ["https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKENS/ANDALUSIAN/Andalusian-Chicken_Pegasene_Shutterstock-1_pbo0pj.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKENS/ANDALUSIAN/Andalusian1_zwdnxr.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKENS/ANDALUSIAN/Andalusian_Chicken_koqgqd.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKENS/ANDALUSIAN/Andalusian-rooster_o1azee.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526153/CHICKENS/BRAHMA/Screenshot_2023-05-30_at_17.23.42_z2cufr.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526153/CHICKENS/BRAHMA/Screenshot_2023-05-30_at_17.23.53_xajmqa.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526153/CHICKENS/BRAHMA/Screenshot_2023-05-30_at_17.21.25_ncy9me.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526153/CHICKENS/BRAHMA/Screenshot_2023-05-30_at_17.24.12_vsucn1.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527669/CHICKENS/BRAKEL/Braekel_zwerg_teq3ej.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527669/CHICKENS/BRAKEL/Goldbrakel_2021-06-08_David_Selbert__38__xf7fqb.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527669/CHICKENS/BRAKEL/zbrakel-gold1_td34vn.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527669/CHICKENS/BRAKEL/Braekel-Bantams-Chickens-for-sale_xam6yo.jpg",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526692/CHICKENS/DUTCH%20BANTHAM/Screenshot_2023-05-30_at_17.32.30_fq1tfa.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526692/CHICKENS/DUTCH%20BANTHAM/Screenshot_2023-05-30_at_17.31.47_uc1p5m.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526691/CHICKENS/DUTCH%20BANTHAM/Screenshot_2023-05-30_at_17.33.24_elluqt.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685526691/CHICKENS/DUTCH%20BANTHAM/Screenshot_2023-05-30_at_17.31.11_llaz5v.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527638/CHICKENS/HAMBURGER/Screenshot_2023-05-30_at_17.34.53_ihs8mq.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527637/CHICKENS/HAMBURGER/Screenshot_2023-05-30_at_17.42.29_qgqx5p.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527637/CHICKENS/HAMBURGER/Screenshot_2023-05-30_at_17.36.31_jwqbkk.png",
+          "https://res.cloudinary.com/dn6tphmik/image/upload/v1685527637/CHICKENS/HAMBURGER/Screenshot_2023-05-30_at_17.37.29_bpb9sa.png"]
+
+20.times do |i|
   chicken = Chicken.new(age: rand(1..10),
                         user_id: User.pluck(:id).sample,
                         breed: ["Andalusian", "Brahma", "Brakel", "Dutch Bantam", "Hamburgh"].sample,
@@ -47,8 +73,8 @@ puts "creating Chickens"
                         price: rand(10..100),
                         name: Faker::Dessert.topping
                         )
-  chicken.save!
+  final_chicken = create_pics(images[i], chicken.name, chicken)
+  final_chicken.save!
 end
-
 
 puts "👩🏻‍🦳👨🏿‍🦱 and 🐔 have been sucessfuly created "
