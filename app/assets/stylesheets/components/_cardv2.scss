@@ -1,0 +1,88 @@
+#cardv2{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover{
+    text-decoration: none;
+    color: inherit;
+  }
+
+
+  .card {
+    width: 250px;
+    border-radius: 12px;
+    // border: 1px solid black;
+    border: #FFFFFF;
+    margin-bottom: 35px;
+    line-height: 20px;
+  }
+
+
+  .card-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
+    object-fit: none;
+    background-size: cover;
+    background-position: left;
+
+  }
+
+  .card-body {
+    font-family: 'Circular Std', sans-serif;
+    padding: 1rem 0;
+  }
+
+  .top-text {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .mid-text {
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+  }
+
+  .low-text {
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+  }
+
+  .l-text-last {
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+  }
+
+  .bottom-text {
+    display: flex;
+    justify-content: left;
+    margin-top: 5px;
+    margin-bottom: -15px;
+    text-decoration: underline;
+  }
+  .card-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 12px;
+    object-fit: none;
+    background-size: cover;
+    background-position: left;
+
+  }
+}
+
+#money{
+  color: black;
+}
