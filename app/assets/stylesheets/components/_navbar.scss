@@ -128,14 +128,14 @@ overflow: visible;
   
 // }
 
-#new_chicken {
+.new_view {
   margin-top: 100px;
   margin-bottom: 60px;
 }
 
-#new {
+.new {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.309);
-  border-radius: 30px;
+  border-radius: 40px;
 }
 
 .first-button-wrapper {
@@ -145,6 +145,7 @@ overflow: visible;
   .first-button {
     width: 49% !important;
     padding: 10px;
+    border-radius: 10px;
   }
 }
 

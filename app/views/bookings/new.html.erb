@@ -1,8 +1,14 @@
-<h1>New view works</h1>
-
-<%= simple_form_for [@chicken, @booking] do |f| %>
-  <%# <%= f.association :chicken %>
-  <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-  <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-  <%= f.submit "Book", class: "btn btn-primary" %>
-<% end %>
+<div class="container new_view d-flex justify-content-center">
+  <div class="row col-12 col-lg-4">
+    <div class="card new p-5" style="font-family: 'Circular Std', sans-serif;">
+      <%= simple_form_for [@chicken, @booking] do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+        <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+        <div class="first-button-wrapper">
+          <%= f.submit "Book", class: "btn btn-danger first-button" %>
+          <%= link_to "Cancel", chicken_path(@chicken), class: "btn btn-secondary text-decoration-none first-button"%>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

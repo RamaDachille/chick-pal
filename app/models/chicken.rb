@@ -1,6 +1,7 @@
 class Chicken < ApplicationRecord
   has_many :users, through: :bookings
   has_many :bookings, dependent: :destroy
+  has_one_attached :photo
 
   validates :age, numericality: { only_integer: true }
   validates :age, :breed, :gender, presence: true
