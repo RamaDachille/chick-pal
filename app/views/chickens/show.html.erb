@@ -3,6 +3,7 @@
 <br>
 <br>
 <br>
+<h1> <%= @chicken.name %> </h1>
 <h1> <%= @chicken.age %> </h1>
 <h1> <%= @chicken.breed %> </h1>
 <h1> <%= @chicken.egg_capacity %> </h1>
@@ -12,4 +13,5 @@
 <h1> <%= @chicken.description %> </h1>
 <h1> <%= @chicken.price %> </h1>
 
-<%= link_to "Add this chicken to your booking", new_chicken_booking_path(@chicken.id) %>
+<%= link_to "Book  chicken", new_chicken_booking_path(@chicken.id) %>
+<%= link_to "Go back", chickens_path%>
