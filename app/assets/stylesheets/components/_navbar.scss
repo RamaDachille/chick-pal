@@ -25,6 +25,7 @@ overflow: visible;
 	width: 100%;
 	z-index: 2;
 	background: white;
+  z-index: 100;
 
 	&__logo,
 	&__nav {
@@ -124,6 +125,26 @@ overflow: visible;
   }
 // }
 
+.new_view {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.new {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.309);
+  border-radius: 40px;
+}
+
+.first-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .first-button {
+    width: 49% !important;
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
 
 footer {
   position: fixed;
