@@ -1,0 +1,16 @@
+<div class="container mt-5">
+<br>
+<br>
+  <% @current_user.bookings.each do |booking| %>
+    <%= booking.start_date %>
+    <%= booking.end_date %>
+    <%= booking.chicken_id %>
+    <div class="container">
+      <%= simple_form_for (booking.booking_status) do |f| %>
+        <%= f.input :booking_status, collection: ["approved", "denied", "pending"] %>
+        <%= f.submit "Update", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  <% end %>
+  <%= link_to "Home page", root_path %>
+</div>
