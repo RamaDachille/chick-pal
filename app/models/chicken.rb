@@ -8,4 +8,7 @@ class Chicken < ApplicationRecord
                                   message: '%<value>s is not a valid breed' }
   validates :noise_level, inclusion: { in: %w[low medium high] }
   validates :gender, inclusion: { in: %w[female male] }
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

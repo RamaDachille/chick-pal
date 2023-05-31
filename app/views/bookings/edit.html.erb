@@ -1,0 +1,6 @@
+<div class="container">
+  <%= simple_form_for (@booking) do |f| %>
+    <%= f.input :booking_status, collection: ["approved", "denied"] %>
+    <%= f.submit "Update", class: "btn btn-primary" %>
+  <% end %>
+</div>
