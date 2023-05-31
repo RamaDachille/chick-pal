@@ -1,19 +1,17 @@
-<h1>Chickens</h1>
-<%= link_to "Rent your chicken", new_chicken_path %>
-<div id="chickens">
-  <div class="cards">
-    <% @chickens.each do |chicken| %>
-      <%= render "chickens/chicken", chicken: chicken %>
-      <p>
-        <%= link_to "Show this chicken", chicken_path(chicken.id)%>
-      </p>
-    <% end %>
-  </div>
-</div>
-
-<%# MAP ---------------- %>
-<div style="width: 100%; height: 600px;"
+<div class="container-full main">
+  <div id="chickens" class="container-full justify-content-between">
+    <div class="chicken-row row cards">
+      <% @chickens.each do |chicken| %>
+        <%= render "chickens/chickenv2", chicken: chicken %>
+      <% end %>
+    </div>
+    <div class="map">
+      <div style="width: 100%; height: 600px;"
   data-controller="map"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-<%# MAP ---------------- %>
+    </div>
+  </div>
+
+</div>
+

@@ -1,17 +1,58 @@
-<br>
-<br>
-<br>
-<br>
-<br>
-<h1> <%= @chicken.name %> </h1>
-<h1> <%= @chicken.age %> </h1>
-<h1> <%= @chicken.breed %> </h1>
-<h1> <%= @chicken.egg_capacity %> </h1>
-<h1> <%= @chicken.gender %> </h1>
-<h1> <%= @chicken.noise_level %> </h1>
-<h1> <%= @chicken.user_id %> </h1>
-<h1> <%= @chicken.description %> </h1>
-<h1> <%= @chicken.price %> </h1>
 
-<%= link_to "Book  chicken", new_chicken_booking_path(@chicken.id) %>
-<%= link_to "Go back", chickens_path%>
+<div class="container">
+  <div class="top-info">
+    <h2> <%= @chicken.name %> </h2>
+    <p> <%= @chicken.breed %> </p>
+  </div>
+
+  <div class="card-img">
+    <div class="big-img" alt="big image"></div>
+
+    <div class="">
+      <div class="group-img-1">
+        <div class="img-block-1" alt="Block image"></div>
+        <div class="img-block-2" alt="Block image"></div>
+      </div>
+      <div class="group-img-2" >
+        <div class="img-block-1" alt="Block image"></div>
+        <div class="img-block-2" alt="Block image"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <div class="card-content">
+
+    <div class="Info">
+          <div>
+            <h4><%= @chicken.name %>﹒Rented by: <%= @user = User.find(@chicken.user_id).first_name %></h4>
+            <p class="breed">Breed - <%= @chicken.breed %> </p>
+            <p><%= @chicken.age %> years old</p>
+            <p> <%= @chicken.gender %> </p>
+            <p>Production: <%= @chicken.egg_capacity %> <i class="fa-solid fa-egg"></i></p>
+            <p>Noise level: <%= @chicken.noise_level %> <i class="fa-solid fa-volume-high"></i></p>
+          </div>
+        <div>
+          <h4> About: <%= @chicken.name %></h4>
+          <p> <%= @chicken.description %> </p>
+        </div>
+     </div>
+
+      <div class="booking"> <strong></strong>
+        <p> <strong><%= @chicken.price %>€</strong> Day</p>
+        <p> Here will display our booking form</p>
+       </div>
+
+
+  </div>
+
+  <%= link_to "Add this chicken to your booking", new_chicken_booking_path(@chicken.id), class:"btn btn-primary last-btn" %>
+
+</div>
