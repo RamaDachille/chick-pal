@@ -1,6 +1,6 @@
-<div class="container d-flex justify-content-center" id="new_chicken">
+<div class="container new_view d-flex justify-content-center">
   <div class="row col-12 col-lg-8">
-    <div class="card p-5" id="new" style="font-family: 'Circular Std', sans-serif;">
+    <div class="card new p-5" style="font-family: 'Circular Std', sans-serif;">
       <%= simple_form_for (@chicken) do |f| %>
         <%= f.input :gender, collection: ["male", "female"] %>
         <%= f.input :breed, collection: ["Andalusian", "Brahma", "Brakel", "Dutch Bantam", "Hamburgh"] %>
