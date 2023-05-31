@@ -1,0 +1,33 @@
+<div id="cardv2" class="col-4">
+<%= link_to  chicken_path(chicken.id) do %>
+  <div class="card">
+    <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1612170153139-6f881ff067e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')" alt="Card image">
+    </div>
+
+    <div class="card-body">
+      <div class="top-text">
+        <p class="card-title"><strong>Cucu</strong></p>
+       <p>★ 5.0</p>
+      </div>
+
+       <div class="low-text">
+      <p class="card-breed"><%= chicken.breed %>, <%= chicken.gender %></p>
+      </div>
+
+       <div class="mid-text">
+        <p class="card-age"> <%= chicken.age %> years old</p>
+      </div>
+
+
+  <div class="l-text-last">
+       <p class="noise level">Noise: <%= chicken.noise_level%></p>
+            <div>
+        <p id= "money" class="price"><u><%= chicken.price %>€ /night</u></p>
+      </div>
+       </div>
+
+
+    </div>
+  </div>
+<% end %>
+</div>

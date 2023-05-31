@@ -1,0 +1,31 @@
+
+.main{
+  margin-top: 80px;
+  margin-bottom: 5%;
+  font-family: 'Circular Std', sans-serif;
+}
+
+.container.main {
+max-width: 1375px;
+background-color: #FFFFFF;
+}
+
+#chickens{
+  display: flex;
+  margin-left: 22px;
+
+  .cards {
+    margin-top: 40px;
+    width: 60%;
+  }
+
+  .map {
+    width: 40%;
+    background-color: aqua;
+  }
+
+}
+
+// .chicken-row{
+//   // margin-left: 50px !important;
+// }

@@ -1,22 +1,23 @@
+
+#cardv1{
 .container {
 background-color: #FFFFFF;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  text-decoration: none;
+  color: inherit;
 }
 .cards {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   line-height: 20px;
-
-  a{
-    text-decoration: none;
-    color: black;
-  }
-
-  a:hover{
-    text-decoration: none;
-    color: inherit;
-  }
-
 }
 .card {
   width: 300px;
@@ -49,5 +50,6 @@ background-color: #FFFFFF;
 .card-body {
   line-height: 20px;
   font-family: 'Circular Std', sans-serif;
+  padding: 1rem 0;
 }
-
+}
