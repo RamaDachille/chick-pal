@@ -5,14 +5,14 @@ class ChickensController < ApplicationController
   # end
 
   def index
-    if params[:query].present?
+    if params[:chicken].present?
       sql_query = <<~SQL
         breed @@ :query
         OR gender @@ :query
         OR name @@ :query
         OR address @@ :query
       SQL
-      @chickens = Chicken.where(sql_query, query: "%#{params[:query]}%")
+      @chickens = Chicken.where(sql_query, query: "%#{params[:chicken][:query]}%")
     else
       @chickens = Chicken.all
     end
@@ -22,6 +22,7 @@ class ChickensController < ApplicationController
         lng: chicken.longitude,
         info_window_html: render_to_string(partial: "info_window", locals: {chicken: chicken}),
         # marker_html: render_to_string(partial: "marker", locals: {chicken: chicken})
+        image: render_to_string(partial: "marker")
       }
     end
   end
@@ -48,6 +49,6 @@ class ChickensController < ApplicationController
   private
 
   def chicken_params
-    params.require(:chicken).permit(:age, :breed, :egg_capacity, :gender, :noise_level, :price)
+    params.require(:chicken).permit(:age, :breed, :egg_capacity, :gender, :noise_level, :price, :photo)
   end
 end

@@ -1,4 +1,13 @@
-<h4><strong>Name: </strong><%= chicken.name %></h4>
+<div class= "mapboxgl-popup-content">
+<div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path chicken.photo.key, height: 300, crop: :fill %>')">
+</div>
+<div class="text">
+<p><strong>Name: </strong><%= chicken.name %></p>
 <p><strong>Gender: </strong><%= chicken.gender %></p>
-<p><strong>Price: </strong><%= chicken.price %></p>
-<button><%= link_to "View Chicen", chicken_path(chicken) %></button>
+<p><strong>Price: </strong><%= chicken.price %>€</p>
+</div>
+<%= link_to chicken_path(chicken.id), class: "chicken-butty" do %>
+<strong>View chicken</strong>
+<% end %>
+</button>
+</div>

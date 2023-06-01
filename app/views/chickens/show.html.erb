@@ -1,68 +1,125 @@
+<div id="show">
 
-<div class="container">
-  <div class="top-info">
-    <h3><strong> <%= @chicken.name %> </strong></h3>
-    <p class="breed"> <%= @chicken.breed %> </p>
-  </div>
+  <div class="container">
+    <div class="top-info">
+      <h3><strong> <%= @chicken.name %> </strong></h3>
+      <p class="breed"> <%= @chicken.breed %> </p>
 
   <div class="card-img">
     <div class="big-img" style="background-image: url(
       <%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="big image"></div>
-
-    <div class="">
-      <div class="group-img-1">
-        <div class="img-block-1" style="background-image: url(<%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="Block image"></div>
-        <div class="img-block-2" style="background-image: url(<%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="Block image"></div>
-      </div>
-      <div class="group-img-2" >
-        <div class="img-block-1" style="background-image: url(<%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="Block image"></div>
-        <div class="img-block-2" style="background-image: url(<%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="Block image"></div>
-      </div>
     </div>
 
-  </div>
+    <div class="card-img">
+      <div class="big-img" style="background-image: url(<%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="big image"></div>
 
-
-  <div class="card-content">
-
-    <div class="Info">
-          <div>
-            <h4><strong> <%= @chicken.name %>﹒Rented by: <%= @user = User.find(@chicken.user_id).first_name %></strong></h4>
-            <p class="breed">Breed - <%= @chicken.breed %> </p>
-            <p><%= @chicken.age %> years old</p>
-            <p> <%= @chicken.gender %> </p>
-            <p>Egg production: <%= @chicken.egg_capacity %> <i class="fa-solid fa-egg"></i></p>
-            <p>Noise level: <%= @chicken.noise_level %> <i class="fa-solid fa-volume-high"></i></p>
-          </div>
-        <div>
-          <h4> About: <%= @chicken.name %></h4>
-          <p class="description"> <%= @chicken.description %> </p>
+      <div class="">
+        <div class="group-img-1">
+          <div class="img-block-1" style="background-image: url(<%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="Block image"></div>
+          <div class="img-block-2" style="background-image: url(<%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="Block image"></div>
         </div>
-     </div>
-
-      <div class="booking">
-        <%# <p> Here will display our booking form</p> %>
-        <div class="card-book">
-          <h4> <strong><%= @chicken.price %>€</strong> Day</h4>
-            <%= simple_form_for [@chicken, @booking] do |f| %>
-              <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-              <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-              <%= f.submit "Book", class: "button" %>
-              <div class="checkout mt-3">
-                <p class="checkout-price"><%= @chicken.price %> € x days</p>
-                <p><%= @chicken.price %> €</p>
-              </div>
-              <div class="total">
-                <p>Total</p>
-                <p><strong><%= @chicken.price %> €</strong></p>
-              </div>
-            <% end %>
+        <div class="group-img-2" >
+          <div class="img-block-1" style="background-image: url(<%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="Block image"></div>
+          <div class="img-block-2" style="background-image: url(<%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="Block image"></div>
         </div>
       </div>
 
+    </div>
 
+    <div class="card-content">
+
+      <div class="Info me-5">
+            <div>
+              <h4><strong> <%= @chicken.name %>﹒Rented by: <%= @user = User.find(@chicken.user_id).first_name %></strong></h4>
+              <p class="address"><%= @chicken.address %> </p>
+              <hr class="mt-4 mb-4">
+              <p class="breed"> <strong><%= @chicken.breed %></strong>,
+                <% if @chicken.gender == "male" %>
+                    <i class="fa-solid fa-mars"></i>
+                  <% else %>
+                    <i class="fa-solid fa-venus"></i>
+                <% end %>
+
+              </p>
+              <p><%= @chicken.age %> years old</p>
+
+              <% if @chicken.gender == "male" %>
+                <% @chicken.noise_level %>
+                  <% if @chicken.noise_level == "low"%>
+                      <p>Noise level: <i class="fa-solid fa-volume-off"></i></p>
+                  <% elsif @chicken.noise_level == "medium"%>
+                    <p>Noise level:  <i class="fa-solid fa-volume-low"></i></p>
+                    <% else %>
+                      <p>Noise level: <i class="fa-solid fa-volume-high"></i></p>
+                    <% end %>
+              <% else %>
+                  <% case @chicken.egg_capacity %>
+                  <% when 1 %>
+                    <p>Egg production:
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% when 2 %>
+                    <p>Egg production:
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% when 3 %>
+                    <p>Egg production:
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% when 4 %>
+                    <p>Egg production:
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% when 5 %>
+                    <p>Egg production:
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% end %>
+              <% end %>
+            </div>
+
+        <hr class="mt-4 mb-4">
+
+          <div>
+            <h4> About: <%= @chicken.name %></h4>
+            <p class="description"> <%= @chicken.description %> </p>
+          </div>
+      </div>
+
+        <div class="booking">
+          <div class="card-book">
+            <h4> <strong><%= @chicken.price %>€</strong> Day</h4>
+              <%= simple_form_for [@chicken, @booking] do |f| %>
+                <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+                <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+                <%= f.submit "Book", class: "button" %>
+                <div class="checkout mt-3">
+                  <p class="checkout-price"><%= @chicken.price %> € x days</p>
+                  <p><%= @chicken.price %> €</p>
+                </div>
+                <div class="total">
+                  <p>Total</p>
+                  <p><strong><%= @chicken.price %> €</strong></p>
+                </div>
+              <% end %>
+          </div>
+
+        </div>
+
+
+    </div>
   </div>
 
-  <%= link_to "Add this chicken to your booking", new_chicken_booking_path(@chicken.id), class:"btn btn-primary last-btn" %>
+  <%# <%= link_to "Add this chicken to your booking", new_chicken_booking_path(@chicken.id), class:"btn btn-primary last-btn" %>
 
 </div>

@@ -1,0 +1,27 @@
+<div class="container">
+  <h2>Bookings</h2>
+  <div class="big-card">
+    <div class="cards">
+      <div class="chicken-row row cards">
+        <% @bookings.each do |booking| %>
+          <div id="cardv2">
+            <%= link_to booking_path(booking.id) do %>
+              <div class="card">
+                <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.chicken.photo.key, height: 300, crop: :fill %>')">
+                </div>
+                <div class="card-body">
+                  <div class="top-text">
+                    <p class="card-title"><strong><%= booking.chicken.name %></strong></p>
+                  </div>
+                    <p class="card-breed"><strong> Status: <%= booking.booking_status %></strong></p>
+                    <p class="card-title"><strong> from <%= booking.start_date %></strong></p>
+                    <p class="card-title"><strong> until <%= booking.end_date %></strong></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

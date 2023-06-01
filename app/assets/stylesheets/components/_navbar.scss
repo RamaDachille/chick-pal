@@ -72,6 +72,11 @@ overflow: visible;
 		align-items: center;
 		justify-content: center;
 		margin-left: 16px;
+      input[type="submit"]
+      {
+        background:url('searchIcon.svg');
+        // more style
+      }
 		img {
 			width: 12px;
 			height: 12px;
@@ -114,25 +119,26 @@ overflow: visible;
 			&-account {
         height: 42px;
         border-radius: 22px;
-        padding: 5px 25px 5px 25px;
+        border: #adadad solid 1px;
+        padding: 5px 0px 5px 12px;
         transition: box-shadow 0.2s ease;
-        background-color: var(--orange);
+        // background-color: var(--orange);
         color: white;
         font-family: 'Circular Std', sans-serif;
 				transition: box-shadow 0.2s ease;
 				&:hover {
 					box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 				}
-				// img {
-				// 	&:first-child {
-				// 		height: 16px;
-				// 		width: 16px;
-				// 	}
-				// 	&:last-child {
-				// 		width: 30px;
-				// 		height: 30px;
-				// 		margin-left: 22px;
-				// 	}
+				img {
+					&:first-child {
+						height: 16px;
+						width: 16px;
+					}
+					&:last-child {
+						width: 30px;
+						height: 30px;
+						margin-left: 12px;
+					}
 				}
 			}
 
@@ -140,7 +146,24 @@ overflow: visible;
 			}
 		}
 
-// }
+}
+
+.test-submit {
+  background: url(searchIcon.svg) right bottom no-repeat, var(--orange);
+  width: 35px;
+  height: 30px;
+  background-position: center;
+  border-radius: 50%;
+  border: none;
+  margin-right: 7px;
+}
+
+.kill-focus {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
 
 .new_view {
   margin-top: 100px;

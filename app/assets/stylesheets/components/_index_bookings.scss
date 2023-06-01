@@ -1,0 +1,21 @@
+.container {
+  margin: 100px;
+}
+
+.big-card {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card-img {
+height: 100px;
+width: 100px;
+}
+
+// .cards {
+//   display: flex;
+//   justify-content: space-between;
+//   flex-wrap: wrap;
+
+// }
