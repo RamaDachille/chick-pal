@@ -8,9 +8,14 @@
         <%= f.input :egg_capacity, collection: [1, 2, 3, 4, 5] %>
         <%= f.input :noise_level, collection: ["low", "medium", "high"] %>
         <%= f.input :price %>
+        <%= f.input :address,
+                    input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+                    wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+        %>
         <%= f.input :description %>
+        <%= f.input :photo, as: :file %>
         <div class="first-button-wrapper">
-          <%= f.submit "Book", class: "btn btn-danger first-button" %>
+          <%= f.submit "Add chicken", class: "btn btn-danger first-button" %>
           <%= link_to "Cancel", chickens_path, class: "btn btn-secondary text-decoration-none first-button"%>
         </div>
       <% end %>
