@@ -80,7 +80,7 @@ overflow: visible;
 	&__nav {
 		display: flex;
 		justify-content: flex-end;
-		&__button {
+		&__button{
 			background: transparent;
 			border: none;
 			display: flex;
@@ -97,6 +97,20 @@ overflow: visible;
 					background: var(--grey-light);
 				}
 			}
+      &-butty {
+        height: 42px;
+        border-radius: 22px;
+        padding: 5px 20px 5px 20px;
+        margin-right: 2px;
+        transition: box-shadow 0.2s ease;
+        color: black;
+        font-family: 'Circular Std', sans-serif;
+        transition: box-shadow 0.2s ease;
+        &:hover {
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+          background-color: var(--grey-light);
+        }
+      }
 			&-account {
         height: 42px;
         border-radius: 22px;
@@ -125,7 +139,7 @@ overflow: visible;
 				}
 			}
 		}
-  
+
 // }
 
 .new_view {

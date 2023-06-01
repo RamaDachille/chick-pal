@@ -1,6 +1,8 @@
     <header class="header">
       <div class="header__logo">
+      <%= link_to root_path do %>
           <%= image_tag "ChickPals.svg", id: "logo" %>
+            <% end %>
       </div>
         <div class="header__search">
           <button><strong>Selected breed</strong></button>
@@ -14,12 +16,22 @@
             </div>
           </button>
         </div>
+      <%# DELETE %>
+      <%# <%= form_with url: chickens_path, method: :get, class: "d-flex" do %>
+        <%# <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a chicken by Name, Breed, Gender, Address ..."
+        %>
+        <%# <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%# <% end %>
+      <%# DELETE %>
       <div class="header__nav">
-        <a href="" class="header__nav__button header__nav__button-greyHover"><strong>Rent your chicken</strong></a>
-        <button class="header__nav__button header__nav__button-account">
+        <%= link_to new_chicken_path, class: "header__nav__button header__nav__button-butty" do %>
+          <strong>Rent your chicken</strong>
+        <% end %>
+        <%= link_to new_user_session_path, class: "header__nav__button header__nav__button-account" do %>
         <strong>Log in</strong>
-          <%# <%= image_tag("icons8-menu.svg") %>
-          <%# <%= image_tag("account.svg") %>
-        </button>
+        <% end %>
       </div>
     </header>
