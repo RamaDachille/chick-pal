@@ -1,3 +1,5 @@
+#show {
+
 .container {
   font-family: 'Circular Std', sans-serif;
   width: 80% !important;
@@ -17,8 +19,6 @@ align-items: center;
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
-
-
 }
 
 .group-img-2 {
@@ -64,8 +64,8 @@ align-items: center;
   margin-bottom: 200px;
 }
 
-.breed {
-  margin-top: -10px;
+.address {
+  margin-top: -5px;
   color: gray;
 }
 
@@ -75,6 +75,7 @@ align-items: center;
 
 .booking {
   width: 50%;
+  margin-bottom: 100px;
 }
 
 .card-book {
@@ -82,7 +83,7 @@ align-items: center;
   background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0,0,0,.125);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
   padding: 1.5rem;
   border-radius: 12px;
 }
@@ -113,4 +114,5 @@ align-items: center;
 }
 .description {
   color: #222222;
+}
 }
