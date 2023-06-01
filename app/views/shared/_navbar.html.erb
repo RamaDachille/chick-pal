@@ -1,37 +1,31 @@
-    <header class="header">
-      <div class="header__logo">
-      <%= link_to root_path do %>
-          <%= image_tag "ChickPals.svg", id: "logo" %>
-            <% end %>
-      </div>
-        <div class="header__search">
-          <button><strong>Selected breed</strong></button>
-          <span></span>
-          <button><strong>29 May - 2 June</strong></button>
-          <span></span>
-          <button>
-            <strong> Female </strong>
-            <div class="header__searchIcon">
-              <%= image_tag("searchIcon.svg") %>
-            </div>
-          </button>
-        </div>
-      <%# DELETE %>
-      <%# <%= form_with url: chickens_path, method: :get, class: "d-flex" do %>
-        <%# <%= text_field_tag :query,
-          params[:query],
-          class: "form-control",
-          placeholder: "Find a chicken by Name, Breed, Gender, Address ..."
-        %>
-        <%# <%= submit_tag "Search", class: "btn btn-primary" %>
-      <%# <% end %>
-      <%# DELETE %>
-      <div class="header__nav">
-        <%= link_to new_chicken_path, class: "header__nav__button header__nav__button-butty" do %>
-          <strong>Rent your chicken</strong>
-        <% end %>
-        <%= link_to new_user_session_path, class: "header__nav__button header__nav__button-account" do %>
-        <strong>Log in</strong>
-        <% end %>
-      </div>
-    </header>
+<header class="header">
+  <div class="header__logo">
+    <%= link_to root_path do %>
+        <%= image_tag "ChickPals.svg", id: "logo" %>
+    <% end %>
+  </div>
+
+  <%= simple_form_for :chicken, url: chickens_path, method: :get, html: {class: "d-flex"} do |f| %>
+    <div class="d-flex align-items-center header__search">
+      <%= f.input :query,
+                  label: false,
+                  wrapper: false,
+                  value: params[:query],
+                  input_html: {
+                    class: "form-control border-0 kill-focus",
+                  },
+                  placeholder: "Find a chicken..." %>
+      <%= f.submit "", class: "test-submit mr-3" %>
+    </div>
+  <% end %>
+
+
+  <div class="header__nav">
+    <%= link_to new_chicken_path, class: "header__nav__button header__nav__button-butty" do %>
+      <strong>Rent your chicken</strong>
+    <% end %>
+    <%= link_to new_user_session_path, class: "header__nav__button header__nav__button-account" do %>
+    <strong>Log in</strong>
+    <% end %>
+  </div>
+</header>

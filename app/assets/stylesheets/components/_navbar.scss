@@ -72,6 +72,11 @@ overflow: visible;
 		align-items: center;
 		justify-content: center;
 		margin-left: 16px;
+      input[type="submit"]
+      {
+        background:url('searchIcon.svg');
+        // more style
+      }
 		img {
 			width: 12px;
 			height: 12px;
@@ -141,6 +146,23 @@ overflow: visible;
 		}
 
 // }
+
+.test-submit {
+  background: url(searchIcon.svg) right bottom no-repeat, var(--orange);
+  width: 35px;
+  height: 30px;
+  background-position: center;
+  border-radius: 50%;
+  border: none;
+  margin-right: 7px;
+}
+
+.kill-focus {
+  &:focus {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
 
 .new_view {
   margin-top: 100px;

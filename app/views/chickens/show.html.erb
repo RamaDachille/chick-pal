@@ -84,12 +84,6 @@
                   <% end %>
               <% end %>
             </div>
-            <
-
-
-
-
-        class="mt-4 mb-4">
           <div>
             <h4> About: <%= @chicken.name %></h4>
             <p class="description"> <%= @chicken.description %> </p>
@@ -120,5 +114,6 @@
     </div>
   </div>
 
-</div>
+  <%# <%= link_to "Add this chicken to your booking", new_chicken_booking_path(@chicken.id), class:"btn btn-primary last-btn" %>
+
 </div>
