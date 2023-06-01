@@ -5,7 +5,17 @@ class ChickensController < ApplicationController
   # end
 
   def index
-    @chickens = Chicken.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        breed @@ :query
+        OR gender @@ :query
+        OR name @@ :query
+        OR address @@ :query
+      SQL
+      @chickens = Chicken.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @chickens = Chicken.all
+    end
     @markers = @chickens.geocoded.map do |chicken|
       {
         lat: chicken.latitude,
