@@ -4,7 +4,6 @@ class PagesController < ApplicationController
   end
 
   def show
-    @bookings = Booking.where(user_id: current_user.id)
-    @current_user.bookings
+    @bookings = Booking.where(chicken_id: current_user.chickens.pluck(:id))
   end
 end

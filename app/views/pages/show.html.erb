@@ -1,16 +1,35 @@
 <div class="container mt-5">
 <br>
 <br>
-  <% @current_user.bookings.each do |booking| %>
-    <%= booking.start_date %>
-    <%= booking.end_date %>
-    <%= booking.chicken_id %>
-    <div class="container">
-      <%= simple_form_for (booking.booking_status) do |f| %>
+<div class='booking-container'>
+  <% @bookings.each do |booking| %>
+    <div class="card-product">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <span class="name">Chicken's name</span>
+        <span class="dates">
+          <i class="fa-regular fa-calendar"></i>
+          <%= booking.start_date.strftime("%d %b") %> – <%= booking.end_date.strftime("%d %b %Y") %>
+          <% a = booking.start_date %>
+          <% b = booking.end_date %>
+          <span class="days"> <%= b.mjd - a.mjd %> days </span>
+        </span>
+        <span class="booker"><i class="fa-regular fa-user"></i> Booker's name </span>
+        <span class="location"> <i class="fa-regular fa-map"></i> Location</span>
+        <span class="price"><i class="fa-solid fa-sack-dollar"></i> Revenue</span>
+        <span class="status">
+          <i class="fa-regular fa-circle-check"></i>
+
+          <i class="fa-regular fa-circle-xmark"></i>
+          </span>
+      </div>
+    </div>
+    <div class="d-none">
+      <%= simple_form_for booking do |f| %>
         <%= f.input :booking_status, collection: ["approved", "denied", "pending"] %>
         <%= f.submit "Update", class: "btn btn-primary" %>
       <% end %>
     </div>
   <% end %>
-  <%= link_to "Home page", root_path %>
+</div>
 </div>
