@@ -10,6 +10,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+  # def index
+  #   @bookings = Booking.where(user_id: current_user.id)
+  #   @chicken = Chicken.find(@bookings.chicken_id)
+  # end
+
   def create
     @booking = Booking.new(booking_params)
     @chicken = Chicken.find(params[:chicken_id])
