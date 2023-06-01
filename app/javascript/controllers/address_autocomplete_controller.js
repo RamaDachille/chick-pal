@@ -1,6 +1,5 @@
-// app/javascript/controllers/address_autocomplete_controller.js
 import { Controller } from "@hotwired/stimulus"
-import MapboxGeocoder from "mapbox-gl"
+import MapboxGeocoder from "@mapbox/mapbox-gl-geocoder"
 
 // Connects to data-controller="address-autocomplete"
 export default class extends Controller {
@@ -9,7 +8,6 @@ export default class extends Controller {
   static targets = ["address"]
 
   connect() {
-    console.log("hellofrom addressshahdncf")
     this.geocoder = new MapboxGeocoder({
       accessToken: this.apiKeyValue,
       types: "country,region,place,postcode,locality,neighborhood,address"
@@ -19,15 +17,15 @@ export default class extends Controller {
     this.geocoder.on("clear", () => this.#clearInputValue())
   }
 
+  disconnect() {
+    this.geocoder.onRemove()
+  }
+
   #setInputValue(event) {
     this.addressTarget.value = event.result["place_name"]
   }
 
   #clearInputValue() {
     this.addressTarget.value = ""
-  }
-
-  disconnect() {
-    this.geocoder.onRemove()
   }
 }

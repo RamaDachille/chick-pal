@@ -1,4 +1,4 @@
-<div class="container new_view d-flex justify-content-center"  data-controller="test">
+<div class="container new_view d-flex justify-content-center">
   <div class="row col-12 col-lg-8">
     <div class="card new p-5" style="font-family: 'Circular Std', sans-serif;">
       <%= simple_form_for (@chicken) do |f| %>
@@ -9,7 +9,7 @@
         <%= f.input :noise_level, collection: ["low", "medium", "high"] %>
         <%= f.input :price %>
         <%= f.input :address,
-                    input_html: {data: {address_autocomplete_target: "address"}},
+                    input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
                     wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
         %>
         <%= f.input :description %>
