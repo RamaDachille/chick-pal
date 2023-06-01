@@ -21,7 +21,9 @@ background-color: #FFFFFF;
 
   .map {
     width: 40%;
-    background-color: aqua;
+    height: 300px;
+    position: sticky;
+    top: 80px;
   }
 
 }
