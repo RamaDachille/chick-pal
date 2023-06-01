@@ -1,8 +1,10 @@
 .container {
   font-family: 'Circular Std', sans-serif;
+  width: 80% !important;
 }
 .top-info {
   margin-top: 100px;
+
 }
 .card-img {
 display: flex;
@@ -24,7 +26,7 @@ align-items: center;
 
 }
 .big-img {
-  width: 640px;
+  width: 600px;
   height: 420px;
   border-radius: 12px 0px 0px 12px;
   object-fit: none;
@@ -35,16 +37,15 @@ align-items: center;
 
 .img-block-1 {
   margin-right: 10px;
-  width: 307px;
+  width: 270px;
   height: 205px;
-  // border-radius: 12px;
   object-fit: none;
   background-size: cover;
   background-position: left;
   background-image: url("https://images.unsplash.com/photo-1612170153139-6f881ff067e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
 }
 .img-block-2 {
-  width: 307px;
+  width: 270px;
   height: 205px;
   border-radius: 0px 12px 12px 0px;
   object-fit: none;
@@ -53,8 +54,10 @@ align-items: center;
   background-image: url("https://images.unsplash.com/photo-1612170153139-6f881ff067e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
 }
 .card-content {
+  margin-top: 30px;
   display: flex;
   justify-content: space-between;
+
 }
 
 .last-btn {
@@ -64,4 +67,50 @@ align-items: center;
 .breed {
   margin-top: -10px;
   color: gray;
+}
+
+.info {
+  width: 75%;
+}
+
+.booking {
+  width: 50%;
+}
+
+.card-book {
+  font-family: 'Circular Std', sans-serif;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+.checkout{
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  width: 100%;
+  background-color: #fbc209;
+  color: white;
+  transition: box-shadow 0.2s ease;
+  height: 42px;
+  border-radius: 12px;
+  font-family: 'Circular Std', sans-serif;
+  border: none;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid lightgray;
+  padding-top: 20px;
+}
+.checkout-price {
+  text-decoration: underline #535E6B;
+  color: #222222;
+}
+.description {
+  color: #222222;
 }
