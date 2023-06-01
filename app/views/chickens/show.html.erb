@@ -1,4 +1,4 @@
-
+<div id="show">
 <div class="container">
   <div class="top-info">
     <h3><strong> <%= @chicken.name %> </strong></h3>
@@ -24,11 +24,11 @@
 
   <div class="card-content">
 
-    <div class="Info">
+    <div class="Info me-5">
           <div>
             <h4><strong> <%= @chicken.name %>﹒Rented by: <%= @user = User.find(@chicken.user_id).first_name %></strong></h4>
             <p class="address"><%= @chicken.address %> </p>
-
+            <hr class= "mt-4 mb-4">
             <p class="breed"> <strong><%= @chicken.breed %></strong>,
               <% if @chicken.gender == "male" %>
                   <i class="fa-solid fa-mars"></i>
@@ -80,18 +80,9 @@
                   <i class="fa-solid fa-egg"></i>
                   </p>
                 <% end %>
-
-
-              <%# <%= @chicken.egg_capacity %>
             <% end %>
-
-
-            <%# <p>Egg production: <%= @chicken.egg_capacity %>
-            <%# <i class="fa-solid fa-egg"></i></p> %>
-            <%# <p>Noise level: <%= @chicken.noise_level %>
-            <%# <i class="fa-solid fa-volume-high"></i></p> %>
           </div>
-
+          <hr class= "mt-4 mb-4">
         <div>
           <h4> About: <%= @chicken.name %></h4>
           <p class="description"> <%= @chicken.description %> </p>
@@ -121,6 +112,7 @@
 
   </div>
 
-  <%# <%= link_to "Add this chicken to your booking", new_chicken_booking_path(@chicken.id), class:"btn btn-primary last-btn" %> 
+  <%# <%= link_to "Add this chicken to your booking", new_chicken_booking_path(@chicken.id), class:"btn btn-primary last-btn" %>
 
+</div>
 </div>
