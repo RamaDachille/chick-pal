@@ -16,6 +16,16 @@
             </div>
           </button>
         </div>
+      <%# DELETE %>
+      <%# <%= form_with url: chickens_path, method: :get, class: "d-flex" do %>
+        <%# <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find a chicken by Name, Breed, Gender, Address ..."
+        %>
+        <%# <%= submit_tag "Search", class: "btn btn-primary" %>
+      <%# <% end %>
+      <%# DELETE %>
       <div class="header__nav">
         <%= link_to new_chicken_path, class: "header__nav__button header__nav__button-butty" do %>
           <strong>Rent your chicken</strong>
