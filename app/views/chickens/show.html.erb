@@ -1,8 +1,8 @@
 
 <div class="container">
   <div class="top-info">
-    <h2> <%= @chicken.name %> </h2>
-    <p> <%= @chicken.breed %> </p>
+    <h3><strong> <%= @chicken.name %> </strong></h3>
+    <p class="breed"> <%= @chicken.breed %> </p>
   </div>
 
   <div class="card-img">
@@ -21,34 +21,43 @@
 
   </div>
 
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 
   <div class="card-content">
 
     <div class="Info">
           <div>
-            <h4><%= @chicken.name %>﹒Rented by: <%= @user = User.find(@chicken.user_id).first_name %></h4>
+            <h4><strong> <%= @chicken.name %>﹒Rented by: <%= @user = User.find(@chicken.user_id).first_name %></strong></h4>
             <p class="breed">Breed - <%= @chicken.breed %> </p>
             <p><%= @chicken.age %> years old</p>
             <p> <%= @chicken.gender %> </p>
-            <p>Production: <%= @chicken.egg_capacity %> <i class="fa-solid fa-egg"></i></p>
+            <p>Egg production: <%= @chicken.egg_capacity %> <i class="fa-solid fa-egg"></i></p>
             <p>Noise level: <%= @chicken.noise_level %> <i class="fa-solid fa-volume-high"></i></p>
           </div>
         <div>
           <h4> About: <%= @chicken.name %></h4>
-          <p> <%= @chicken.description %> </p>
+          <p class="description"> <%= @chicken.description %> </p>
         </div>
      </div>
 
-      <div class="booking"> <strong></strong>
-        <p> <strong><%= @chicken.price %>€</strong> Day</p>
-        <p> Here will display our booking form</p>
-       </div>
+      <div class="booking">
+        <%# <p> Here will display our booking form</p> %>
+        <div class="card-book">
+          <h4> <strong><%= @chicken.price %>€</strong> Day</h4>
+            <%= simple_form_for [@chicken, @booking] do |f| %>
+              <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+              <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+              <%= f.submit "Book", class: "button" %>
+              <div class="checkout mt-3">
+                <p class="checkout-price"><%= @chicken.price %> € x days</p>
+                <p><%= @chicken.price %> €</p>
+              </div>
+              <div class="total">
+                <p>Total</p>
+                <p><strong><%= @chicken.price %> €</strong></p>
+              </div>
+            <% end %>
+        </div>
+      </div>
 
 
   </div>
