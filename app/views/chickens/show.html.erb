@@ -5,6 +5,9 @@
       <h3><strong> <%= @chicken.name %> </strong></h3>
       <p class="breed"> <%= @chicken.breed %> </p>
 
+  <div class="card-img">
+    <div class="big-img" style="background-image: url(
+      <%= cl_image_path @chicken.photo.key, height: 300, crop: :fill, gravity: :face %>)" alt="big image"></div>
     </div>
 
     <div class="card-img">
