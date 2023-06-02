@@ -34,7 +34,11 @@
       <div class="dropdown">
         <div class="header__nav__button header__nav__button-account dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           <%= image_tag("icons8-menu.svg") %>
-          <%= image_tag("account.svg") %>
+          <% if user_signed_in? %>
+            <%= image_tag("profile-chicken-pic.jpg") %>
+          <% else %>
+            <%= image_tag("account.svg") %>
+          <% end %>
         </div>
         <% if user_signed_in? %>
           <ul class="dropdown-menu">
