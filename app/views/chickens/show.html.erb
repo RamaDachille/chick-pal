@@ -109,7 +109,16 @@
                 <% end %>
             </div>
         <% elsif @chicken.user_id == current_user.id %>
-          <h4> <strong><%= @chicken.price %>€</strong> Day</h4>
+            <div class="card-book" style="width: 40%">
+              <h4 class="d-flex justify-content-between" style="font-size: 20px"> Price per day: <strong> <%= @chicken.price %>€</strong></h4>
+              <hr class="mt-4 mb-4">
+              <h4 class="d-flex justify-content-between" style="font-size: 20px"> Pending requests: <strong> 0</strong> </h4>
+              <h4 class="d-flex justify-content-between" style="font-size: 20px"> Approved requests: <strong> 0</strong> </h4>
+              <h4 class="d-flex justify-content-between" style="font-size: 20px"> Rejected requests: <strong> 0</strong> </h4>
+              <hr class="mt-4 mb-4">
+              <a class="btn button" style="padding-top: 10px">Edit Chicken</a><br><br>
+              <a class="btn button" style="padding-top: 10px" href="<%= mybookings_path %>">Manage Bookings</a>
+            </div>
         <% else %>
           <div class="booking">
             <div class="card-book" data-controller="price-count" data-price-count-price-value="<%= @chicken.price %>">

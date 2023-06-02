@@ -1,6 +1,7 @@
 <div data-controller="form" class="container new_view d-flex justify-content-center">
   <div class="row col-12 col-lg-8">
     <div class="card new p-5" style="font-family: 'Circular Std', sans-serif;">
+      <h3 class="d-flex justify-content-center"><strong>Rent your chicken</strong></h3>
       <%= simple_form_for (@chicken) do |f| %>
         <%= f.input :gender, collection: ["male", "female"], input_html: {data: {form_target: "gender", action: "click->form#checkGender"}}%>
         <%= f.input :breed, collection: ["Andalusian", "Brahma", "Brakel", "Dutch Bantam", "Hamburgh"] %>
