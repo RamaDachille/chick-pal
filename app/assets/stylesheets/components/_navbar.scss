@@ -148,6 +148,10 @@ overflow: visible;
 
 }
 
+.header__search {
+  margin-left: 70px;
+}
+
 .test-submit {
   background: url(searchIcon.svg) right bottom no-repeat, var(--orange);
   width: 35px;

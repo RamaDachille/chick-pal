@@ -44,6 +44,7 @@
   .top-text {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 5px;
   }
 
   .mid-text {
@@ -53,12 +54,28 @@
     margin-top: -10px;
   }
 
-  .low-text {
+  .mid-text1 {
     color: gray;
     display: flex;
     justify-content: space-between;
     margin-top: -10px;
   }
+
+  .mid-text2 {
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  .low-text3 {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
+  }
+
 
   .l-text-last {
     color: gray;
@@ -87,4 +104,21 @@
 
 #money{
   color: black;
+}
+
+/* Grow */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
