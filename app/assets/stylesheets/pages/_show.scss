@@ -13,6 +13,11 @@ display: flex;
 justify-content: space-between;
 flex-wrap: wrap;
 align-items: center;
+width: 100%;
+}
+
+.image-wrapper{
+  width: 49%;
 }
 
 .group-img-1 {
@@ -26,7 +31,7 @@ align-items: center;
 
 }
 .big-img {
-  width: 600px;
+  width: 50%;
   height: 420px;
   border-radius: 12px 0px 0px 12px;
   object-fit: none;
@@ -36,14 +41,14 @@ align-items: center;
 
 .img-block-1 {
   margin-right: 10px;
-  width: 270px;
+  width: 50%;
   height: 205px;
   object-fit: none;
   background-size: cover;
   background-position: left;
 }
 .img-block-2 {
-  width: 270px;
+  width: 50%;
   height: 205px;
   border-radius: 0px 12px 12px 0px;
   object-fit: none;
