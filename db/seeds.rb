@@ -96,7 +96,7 @@ images = ["https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKEN
                         noise_level: ["low", "medium", "high"].sample,
                         description: chicken_descriptions.sample,
                         price: rand(10..100),
-                        name: Faker::Creature::Dog.name,
+                        name: Faker::Dessert.topping,
                         address: ["Goerzallee 189, 14167 Berlin, Germany", "Billy-Wilder-Promenade 49, 14167 Berlin, Germany", "Glinkastraße 20, 10117 Berlin, Germany", "Seegefelder Str. 12, 13597 Berlin, Germany", "Ruppiner Chaussee 351, 13503 Berlin, Germany", "Bisonweg 155, 13503 Berlin, Germany", "Koenigsallee, 14193 Berlin, Germany", "Leipziger Straße, 10117 Berlin, Germany"].sample
                         )
   final_chicken = create_pics(images[i], chicken.name, chicken)
