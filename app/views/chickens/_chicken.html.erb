@@ -1,10 +1,9 @@
 <div id="cardv1">
 <%= link_to  chicken_path(chicken.id) do %>
 
- <div class="card">
+  <div class="card">
 
-  <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path chicken.photo.key, height: 300, crop: :fill %>')"
->
+  <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path chicken.photo.key, height: 300, crop: :fill %>')">
   </div>
 
     <div class="card-body">
