@@ -42,8 +42,8 @@
         </div>
         <% if user_signed_in? %>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="<%= new_user_session_path %>">Your Bookings</a></li>
-            <li><a class="dropdown-item" href="<%= new_user_session_path %>">Manage your Listings</a></li>
+            <li><a class="dropdown-item" href="<%= bookings_path %>">Your Bookings</a></li>
+            <li><a class="dropdown-item" href="<%= mybookings_path %>">Manage your Listings</a></li>
             <hr>
             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item", data: { turbo_method: :delete } %></li>
           </ul>
