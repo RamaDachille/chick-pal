@@ -14,27 +14,30 @@ User.destroy_all
 
 # geochicken = Chicken.new(age: 5, breed: "Andalusian", egg_capacity: 4, gender: "male", noise_level: "low", user_id: 22, description: "Test 123", price: 15, name: "Test Chicken", address: "Rudi-Dutschke-Straße 26, 10969 Berlin")
 chicken_descriptions = [
-  "Meet Henrietta, a charming hen with a striking combination of black and white feathers. She's a friendly and sociable chicken that loves to explore the backyard.",
-  "Introducing Nugget, a plump and golden-brown chicken with a heartwarming personality. She enjoys sunbathing and scratching the soil for delicious treats.",
-  "Clara is a beautiful silkie chicken with soft and fluffy white feathers. She's known for her gentle nature and makes for a perfect companion in the garden.",
-  "Say hello to Maximus, a regal rooster with vibrant multicolored plumage. He struts around the coop with confidence and adds a touch of elegance to any flock.",
-  "Penelope is a graceful and elegant hen with feathers in shades of brown and gold. She's an excellent egg layer and will provide you with farm-fresh eggs every morning.",
-  "Meet Coco, a curious and adventurous chicken with speckled black and white feathers. She loves to roam freely and is always on the lookout for exciting discoveries.",
-  "Benny is a friendly and affectionate rooster with a vibrant red comb and majestic tail feathers. He's a natural alarm clock, ensuring you wake up with his crowing.",
-  "Lucy is a fluffy and cuddly chicken with beautiful golden feathers. She enjoys human companionship and will happily perch on your shoulder while you relax.",
-  "Introducing Ginger, a striking ginger-colored hen with a playful personality. She loves to scratch the ground and is an expert bug hunter in the garden.",
-  "Say hello to Elvis, a rockstar rooster with jet-black feathers and a stylish comb. He loves to entertain with his lively crowing and will steal the show every time.",
-  "Penny is a petite and dainty hen with stunning black and white polka-dot feathers. She's a little shy but quickly warms up to gentle care and attention.",
-  "Meet Spike, a handsome and protective rooster with glossy dark feathers and a strong build. He'll keep a watchful eye over the flock and ensure their safety.",
-  "Daisy is a sweet and docile hen with beautiful yellow feathers and a gentle demeanor. She's an excellent choice for families and will quickly become a beloved pet.",
-  "Introducing Maverick, a bold and fearless rooster with striking blue and green iridescent feathers. He's the leader of the flock and commands respect from his companions.",
-  "Coco is a stunning chocolate-colored hen with a friendly personality. She enjoys dust bathing and will keep your garden pest-free with her diligent foraging.",
-  "Say hello to Oliver, a handsome and regal rooster with luxurious white feathers. He's a great protector and will ensure the safety of his hens at all times.",
-  "Lily is a delightful and sociable hen with beautiful black and white striped feathers. She's an excellent choice for a backyard flock and gets along well with other chickens.",
-  "Introducing Rocky, a robust and resilient rooster with rugged brown feathers and a fierce attitude. He's a true guardian and will protect the coop from intruders.",
-  "Pumpkin is a lovely hen with warm orange feathers and a friendly disposition. She's an expert at finding hidden treats and loves to share her discoveries with the flock.",
-  "Meet Jasper, a striking rooster with a combination of vibrant red, green, and blue feathers. He's a real showstopper and will add a touch of glamour to your backyard.",
+  "A friendly chicken with a striking combination of feathers, always ready to explore the backyard and make new friends.",
+  "A hilarious companion with a unique plumage and a mischievous sense of humor, brightening up the coop with laughter and funny antics.",
+  "A delightful and loving chicken, known for its affectionate nature and vibrant personality, spreading warmth in the backyard.",
+  "A charismatic superstar of the chicken world, commanding attention with its confident presence and fabulousness in the coop.",
+  "A playful prankster, always up to mischief and ready to playfully tease others, keeping the backyard entertained with clever tricks.",
+  "A fabulous and fashion-forward chicken, setting trends with its stylish feathers and turning the coop into a runway of fashion.",
+  "A sassy and occasionally mean chicken with a sharp beak, keeping others on their toes and adding a touch of attitude to the coop.",
+  "A sweetheart with a gentle and loving nature, bringing warmth to the flock with cuddles and spreading love throughout the backyard.",
+  "A feathered entertainer, the life of the party with witty jokes and hilarious performances, keeping the coop filled with joy and amusement.",
+  "A pensive philosopher, always lost in deep thoughts, offering wise perspectives and pondering the mysteries of life in the backyard.",
+  "A fearless explorer, venturing into new territories with curiosity and bravery, inspiring others to embrace adventure in the backyard.",
+  "A caring nurturer, always looking out for its flock members and spreading love, providing comfort and support in times of need.",
+  "A funny chicken with a quick wit, tickling funny bones and brightening up the backyard with humorous remarks and playful antics.",
+  "An enigmatic charmer, captivating others with its mysterious allure and leaving a lasting impression on everyone it meets in the coop.",
+  "A mischievous troublemaker, adding excitement and laughter to the coop with playful pranks and amusing hijinks.",
+  "A poetic soul, expressing emotions through beautiful verses that touch the heart, enchanting others with its lyrical clucks.",
+  "A feathered jester, always ready with a funny quip or a hilarious gesture, infusing the flock with laughter and amusement in the backyard."
 ]
+
+
+chicken_names = [
+  "Super Santi", "Cutie Emma", "Marina", "Rama", "Bruno", "Joanna", "Charlotte", "Emily", "Pamela", "Esti", "Adam", "Pedro", "Eleganza Antonio", "Paul", "Katharine", "Ahmed", "Madhava", "William", "Ana", "Agustin", "Nic", "Maximillian", "Baran", "Begana", "Dabin", "Madam Esther", "James", "Sebi", "Zakariya"
+]
+
 
 puts "cleaning DB"
 
@@ -99,7 +102,7 @@ images = ["https://res.cloudinary.com/dn6tphmik/image/upload/v1685527668/CHICKEN
                         noise_level: ["low", "medium", "high"].sample,
                         description: chicken_descriptions.sample,
                         price: rand(10..100),
-                        name: Faker::Dessert.topping,
+                        name: chicken_names.sample,
                         address: ["Goerzallee 189, 14167 Berlin, Germany", "Billy-Wilder-Promenade 49, 14167 Berlin, Germany", "Glinkastraße 20, 10117 Berlin, Germany", "Seegefelder Str. 12, 13597 Berlin, Germany", "Ruppiner Chaussee 351, 13503 Berlin, Germany", "Bisonweg 155, 13503 Berlin, Germany", "Koenigsallee, 14193 Berlin, Germany", "Leipziger Straße, 10117 Berlin, Germany"].sample
                         )
   final_chicken = create_pics(images[i], chicken.name, chicken)
