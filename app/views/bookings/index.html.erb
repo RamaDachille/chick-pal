@@ -1,50 +1,43 @@
 
-<div id="index-booking">
-  <div class="container">
-   <h2>My bookings</h2>
-   <div class="chicken-grid">
-    <% @bookings.each do |booking| %>
-
-
-              <div id="cardv2-chicken">
-               <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.chicken.photo.key, height: 300, crop: :fill %>')">
-                    </div>
-                <%#= link_to booking_path(booking.id) do %>
-                  <div class="card">
-
-                    <div class="card-body">
-                      <div class="top-text">
-                        <h5 class="card-title"><strong><%= booking.chicken.name %></strong></h5>
-                      </div>
-                        <span class="dates">
-                          <i class="fa-regular fa-calendar"></i>
-                          <%= booking.start_date.strftime("%d %b") %> – <%= booking.end_date.strftime("%d %b %Y") %>
-                          <% a = booking.start_date %>
-                          <% b = booking.end_date %>
-                          <span class="days"> <%= b.mjd - a.mjd %> days </span>
-                        </span>
-
-                        <strong> Status: </strong>
-                        <% if booking.booking_status == "pending" %>
-                          <i class="fa-solid fa-spinner"></i>
-                        <% else %>
-                          <i class="fa-solid fa-circle-check"></i>
-                        <% end %>
-
-                    </div>
-                  </div>
-                <%# end %>
-              </div>
-
-
-    <% end %>
-
-  </div>
-  <div class="legend">
-      <%# <p>Pending: <i class="fa-solid fa-circle-exclamation"></i></p> %>
-      <p>Pending: <i class="fa-solid fa-spinner"></i></p>
-      <p>Recject: <i class="fa-solid fa-circle-xmark"></i></p>
-      <p>Aproved: <i class="fa-solid fa-circle-check"></i>
-    </div>
-  </div>
+<div id="namename">
+<h1> My bookings: </h1>
 </div>
+    <div id="index-booking" class="container">
+      <div class='booking-container'>
+        <% @bookings.each do |booking| %>
+          <div class="card-product">
+            <%= cl_image_tag booking.chicken.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-product-infos">
+              <span class="Sname"><%= booking.chicken.name %></span>
+              <span class="dates">
+                <i class="fa-regular fa-calendar"></i>
+                <%= booking.start_date.strftime("%d %b") %> – <%= booking.end_date.strftime("%d %b %Y") %>
+                <% a = booking.start_date %>
+                <% b = booking.end_date %>
+                <span class="days"> <%= b.mjd - a.mjd %> days </span>
+              </span>
+
+              <span class="location"> <i class="fa-regular fa-map"></i> <%= Faker::Address.street_name %></span>
+              <span class="Sprice"><i class="fa-solid fa-sack-dollar"></i> <%= booking.chicken.price * (b.mjd - a.mjd)%></span>
+              <span class="status">
+                <strong> Status: </strong>
+                            <% if booking.booking_status == "pending" %>
+                              <i class="fa-solid fa-spinner"></i>
+                            <% elsif booking.booking_status == "denied" %>
+                              <i class="fa-solid fa-circle-xmark"></i>Ps
+                            <% else %>
+                              <i class="fa-solid fa-circle-check"></i>
+                            <% end %>
+                </span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="legend">
+          <%# <p>Pending: <i class="fa-solid fa-circle-exclamation"></i></p> %>
+          <p>Pending: <i class="fa-solid fa-spinner"></i></p>
+          <p>Approved: <i class="fa-solid fa-circle-check"></i>
+          <p>Denied: <i class="fa-solid fa-circle-xmark"></i></p>
+        </div>
+      </div>
+    </div>

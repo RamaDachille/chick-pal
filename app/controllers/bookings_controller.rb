@@ -20,11 +20,7 @@ class BookingsController < ApplicationController
     @booking.chicken = @chicken
     @booking.user = current_user
     if @booking.save!
-      # if user_signed_in?
-        redirect_to bookings_path
-      # else
-      #   redirect_to new_user_session_path
-      # end
+      redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end

@@ -1,74 +1,147 @@
+#namename{
+  font-family: 'Circular Std', sans-serif;
+  margin-top: 8%;
+  margin-left: 150px;
+}
 #index-booking {
-
-.container {
-  margin: 100px;
-}
-
-#cardv2-chicken{
-  display: flex;
-    border: 1px solid grey;
-    max-width: 68%;
-    align-items: center;
-    border-radius: 3px;
-}
-
-.chicken-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-}
-
-.chicken-row {
-  overflow: hidden;
-  height: 240px;
-  background: white;
-  box-shadow: 0 0 8px rgba(0,0,0,0.2);
-  display: flex;
-  justify-content: space-between;
-  width: 40%;
-  border-radius: 12px;
-}
-
-.card-img {
-  height: 120px;
-  width: 120px;
-  background-position: center;
-    background-size: cover;
-  // object-fit: cover;
-  // margin-left: -14px;
-  // border-radius: 12px 0px 0px 12px;
-}
-
-.card-body {
-  height: 120px;
-  color: rgb(49, 47, 47);
-  margin-left: 10px;
-
-}
-
-.fa-circle-exclamation {
-  color: orange;
-}
-.fa-spinner {
-  color: orange;
-}
-.fa-circle-xmark{
-  color: red;
-}
-.fa-circle-check {
-  color: green;
-  margin-bottom: 200px;
-}
-.legend {
-  margin-top: 30px;
-  width: 30%;
-  display: flex;
-  justify-content: space-between;
-  p {
-color: grey;
+  margin-bottom: 2%;
+  .container {
+    margin-top: 100px;
+    background-color: antiquewhite;
   }
-}
-.dates {
-margin-bottom: 30px;
-}
+
+  .card-product {
+    overflow: hidden;
+    height: 120px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    width: 45%;
+    position: relative;
+    margin-top: 32px;
+    border-radius: 12px;
+    border: #FFFFFF;
+    font-family: 'Circular Std', sans-serif;
+    color: #717171;
+
+    .status{
+      position: absolute;
+      right: 11px;
+      bottom: 8px;
+    }
+
+    .Sname{
+      position: absolute;
+      top: 7px;
+      left: 135px;
+      font-size: 20px;
+      font-weight: bold;
+      color: black;
+    }
+    .dates{
+      position: absolute;
+      bottom: 9px;
+      .days{
+        background-color: #FBC209;
+        color: white;
+        padding: 1px 8px;
+        padding-bottom: 2px;
+        border-radius: 8px;
+      }
+    }
+    .booker{
+      position: absolute;
+      top: 39px;
+    }
+    .location{
+      position: absolute;
+      top: 50px;
+    }
+    .Sprice{
+      position: absolute;
+      top: 11px;
+      right: 11px;
+      font-size: 16px;
+      font-weight: bold;
+      color: black;
+    }
+
+      .fa-circle-check{
+        color: green;
+        position: absolute;
+        bottom: 10px;
+        right: 60px;
+        font-size: 35px;
+      }
+      .fa-circle-xmark{
+        color: red;
+        position: absolute;
+        bottom: 10px;
+        right: 14px;
+        font-size: 35px
+      }
+  }
+
+
+  .card-product img {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+  }
+
+  .card-product h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  .card-product p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+
+  .card-product .card-product-infos {
+    padding: 16px;
+  }
+
+  .booking-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+
+  .fa-circle-exclamation {
+    color: orange;
+  }
+
+  .fa-spinner {
+    color: orange;
+  }
+
+  .fa-circle-xmark{
+    color: red;
+  }
+
+  .fa-circle-check {
+    color: green;
+    margin-bottom: 200px;
+  }
+
+  .legend {
+    margin-top: 38px;
+    display: flex;
+    justify-content: center;
+    p {
+        color: grey;
+        padding: 0 20px;
+      }
+    }
+
+
+
 }
