@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(update_params)
     if @booking.save!
-      redirect_to mybookings_path, notice: "Booking request approved."
+      redirect_to mybookings_path, notice: update_params[:booking_status] == "approved" ? "Booking request approved." : "Booking request denied."
     else
       render :new, status: :unprocessable_entity
     end
