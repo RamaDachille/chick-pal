@@ -1,9 +1,10 @@
-<div id="cardv1">
+<div class="hvr-grow" id="cardv1">
+
 <%= link_to  chicken_path(chicken.id) do %>
 
  <div class="card">
 
-  <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path chicken.photo.key, height: 300, crop: :fill %>')"
+  <div class="card-img" style="background-image: url('<%= cl_image_path chicken.photo.key, height: 300, crop: :fill %>')"
 >
   </div>
 
@@ -15,7 +16,51 @@
 
       <div class="mid-text">
         <p class="card-age"> <%= chicken.gender.capitalize %>, <%= chicken.age %> years old</p>
-        <p class="noise level"><%= chicken.noise_level%></p>
+            <span class="noise-level">
+              <% if chicken.gender == "male" %>
+                <% chicken.noise_level %>
+                  <% if chicken.noise_level == "low"%>
+                      <p><i class="fa-solid fa-volume-off"></i></p>
+                  <% elsif chicken.noise_level == "medium"%>
+                    <p><i class="fa-solid fa-volume-low"></i></p>
+                    <% else %>
+                      <p><i class="fa-solid fa-volume-high"></i></p>
+                    <% end %>
+              <% else %>
+                  <% case chicken.egg_capacity %>
+                    <% when 1 %>
+                      <p>
+                      <i class="fa-solid fa-egg"></i>
+                      </p>
+                    <% when 2 %>
+                      <p>
+                      <i class="fa-solid fa-egg"></i>
+                      <i class="fa-solid fa-egg"></i>
+                      </p>
+                    <% when 3 %>
+                      <p>
+                      <i class="fa-solid fa-egg"></i>
+                      <i class="fa-solid fa-egg"></i>
+                      <i class="fa-solid fa-egg"></i>
+                      </p>
+                    <% when 4 %>
+                      <p>
+                      <i class="fa-solid fa-egg"></i>
+                      <i class="fa-solid fa-egg"></i>
+                      <i class="fa-solid fa-egg"></i>
+                      <i class="fa-solid fa-egg"></i>
+                      </p>
+                    <% when 5 %>
+                    <p>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% end %>
+              <% end %>
+            </span>
       </div>
 
       <div>

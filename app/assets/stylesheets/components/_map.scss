@@ -1,5 +1,6 @@
 .mapboxgl-popup {
-  max-width: 300px;
+  width: 300px;
+  height: 300px;
   border-radius: 50px;
 }
 
@@ -15,10 +16,19 @@
   pointer-events: auto;
   position: relative;
 
+  .card-img{
+    width: 200px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 15px;
+
+  }
+
 }
 
 .text{
-  text-align: left;
+  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -34,13 +44,13 @@
   background-color: var(--orange);
   border: none;
   color: white;
-  text-decoration: none;
-   button{
-    border: var(--orange);
-    text-decoration: none;
-    color: white;
-    button:hover{
-      color: white;
+  text-decoration: none !important;
+  &:hover{
+      color: white !important;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18) !important;
+    }
+
+    &:focus-visible{
+      outline: none;
     }
   }
-}
