@@ -89,24 +89,46 @@
             <p class="description"> <%= @chicken.description %> </p>
           </div>
       </div>
-
-        <div class="booking">
-          <div class="card-book">
-            <h4> <strong><%= @chicken.price %>€</strong> Day</h4>
-              <%= simple_form_for [@chicken, @booking] do |f| %>
-                <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-                <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
-                <%= f.submit "Book", class: "button" %>
-                <div class="checkout mt-3">
-                  <p class="checkout-price"><%= @chicken.price %> € x days</p>
-                  <p><%= @chicken.price %> €</p>
-                </div>
-                <div class="total">
-                  <p>Total</p>
-                  <p><strong><%= @chicken.price %> €</strong></p>
-                </div>
-              <% end %>
-          </div>
+        <%# TODO if signed out, redirect book chicken button to login %>
+        <% if !user_signed_in?  %> <%# Makes sure if user is signed out they can always book%>
+          <div class="booking">
+            <div class="card-book" data-controller="price-count" data-price-count-price-value="<%= @chicken.price %>">
+              <h4> <strong><%= @chicken.price %>€</strong> Day</h4>
+                <%= simple_form_for [@chicken, @booking] do |f| %>
+                  <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker", "price-count-target": "start", action: "change->price-count#calculate" } } %>
+                  <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker", "price-count-target": "end", action: "change->price-count#calculate" } } %>
+                  <%= f.submit "Book", class: "button" %>
+                  <div class="checkout mt-3">
+                    <p class="checkout-price"  data-price-count-target= "price"></p>
+                    <p data-price-count-target= "total1"></p>
+                  </div>
+                  <div class="total">
+                    <p>Total</p>
+                    <p data-price-count-target= "total"></p>
+                  </div>
+                <% end %>
+            </div>
+        <% elsif @chicken.user_id == current_user.id %>
+          <h4> <strong><%= @chicken.price %>€</strong> Day</h4>
+        <% else %>
+          <div class="booking">
+            <div class="card-book" data-controller="price-count" data-price-count-price-value="<%= @chicken.price %>">
+              <h4> <strong><%= @chicken.price %>€</strong> Day</h4>
+                <%= simple_form_for [@chicken, @booking] do |f| %>
+                  <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker", "price-count-target": "start", action: "change->price-count#calculate" } } %>
+                  <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepicker", "price-count-target": "end", action: "change->price-count#calculate" } } %>
+                  <%= f.submit "Book", class: "button" %>
+                  <div class="checkout mt-3">
+                    <p class="checkout-price"  data-price-count-target= "price"></p>
+                    <p data-price-count-target= "total1"></p>
+                  </div>
+                  <div class="total">
+                    <p>Total</p>
+                    <p data-price-count-target= "total"></p>
+                  </div>
+                <% end %>
+            </div>
+        <% end %>
 
         </div>
 
