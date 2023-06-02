@@ -1,5 +1,6 @@
 #show {
   margin-top: 150px;
+  margin-bottom: 150px;
 
 .container {
   font-family: 'Circular Std', sans-serif;
@@ -127,11 +128,18 @@ width: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 45%;
+  width: 87%;
   position: relative;
   margin-top: 32px;
   border-radius: 12px;
   border: #FFFFFF;
+
+  .status{
+    position:absolute;
+    right: 10px;
+    top: 80px;
+  }
+}
   .name{
     position: absolute;
     top: 4px;
@@ -208,8 +216,19 @@ width: 100%;
 }
 
 .booking-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+    /* justify-content: space-around; */
+    /* flex-wrap: wrap; */
+    grid-template-columns: 1fr 1fr;
+
 }
+
+.accordion-button:focus{
+  border: #ffffff !important;
+}
+
+.accordion-button:not(.collapsed) {
+  color: black !important;
+  background-color: #e7f1ff;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
 }

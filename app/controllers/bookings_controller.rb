@@ -1,6 +1,7 @@
 require 'pry-byebug'
 
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def show
     @booking = Booking.find(params[:id])
   end
@@ -12,6 +13,8 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user_id: current_user.id)
+
+
   end
 
   def create
@@ -34,7 +37,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(update_params)
     if @booking.save!
-      redirect_to booking_path(@booking)
+      redirect_to mybookings_path, notice: "Booking request approved."
     else
       render :new, status: :unprocessable_entity
     end

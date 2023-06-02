@@ -3,6 +3,8 @@ class ChickensController < ApplicationController
   # def top
   #   @chickens = Chicken.where(rating: 5)
   # end
+  skip_before_action :authenticate_user!, only: :index
+
 
   def index
     if params[:chicken].present?
@@ -14,7 +16,9 @@ class ChickensController < ApplicationController
       SQL
       @chickens = Chicken.where(sql_query, query: "%#{params[:chicken][:query]}%")
     else
-      @chickens = Chicken.all
+
+      @chickens = Chicken.where.not(user_id: current_user.id)
+     
     end
     @markers = @chickens.geocoded.map do |chicken|
       {

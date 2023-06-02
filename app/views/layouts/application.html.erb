@@ -18,6 +18,20 @@
   <body>
     <%= render "shared/navbar" %>
     <%= yield %>
+        <% if notice %>
+        <div style="position:absolute; background-color: yellow" class="alert alert-info alert-dismissible fade show m-1" role="alert">
+          <%= notice %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          </button>
+        </div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-warning alert-dismissible fade show m-1" role="alert">
+          <%= alert %>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+          </button>
+        </div>
+      <% end %>
     <%= render "shared/footer" %>
   </body>
 </html>
