@@ -4,10 +4,10 @@ class Chicken < ApplicationRecord
   has_one_attached :photo
 
   validates :age, numericality: { only_integer: true }
-  validates :age, :breed, :gender, presence: true
+  validates :age, :breed, :gender, :photo, :name, :address, :price, :description, presence: true
   validates :breed, inclusion: { in: ["Andalusian", "Brahma", "Brakel", "Dutch Bantam", "Hamburgh"],
                                   message: '%<value>s is not a valid breed' }
-  validates :noise_level, inclusion: { in: %w[low medium high] }
+  validates :noise_level, inclusion: { in: ["", "low", "medium", "high"] }
   validates :gender, inclusion: { in: %w[female male] }
 
   geocoded_by :address

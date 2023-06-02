@@ -1,26 +1,76 @@
-<div id="cardv2">
+<div class= "hvr-grow" id="cardv2">
 <%= link_to  chicken_path(chicken.id) do %>
 
  <div class="card">
 
-  <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path chicken.photo.key, height: 300, crop: :fill %>')"
+  <div class="card-img" style="background-image: url('<%= cl_image_path chicken.photo.key, height: 300, crop: :fill %>')"
 >
   </div>
 
     <div class="card-body">
       <div class="top-text">
         <p class="card-title"><strong><%= chicken.name %></strong></p>
-        <p class="card-breed"><strong><%= chicken.breed %></strong></p>
+        <p class="card-rate"><strong>★ 5.0</strong></p>
       </div>
 
       <div class="mid-text">
-        <p class="card-age"> <%= chicken.gender.capitalize %>, <%= chicken.age %> years old</p>
-        <p class="noise level"><%= chicken.noise_level%></p>
+       <p class="card-breed"><%= chicken.breed %></p>
+      </div>
+      <div class="mid-text2">
+              <p class="card-age"> <%= chicken.gender.capitalize %>, <%= chicken.age %> years old</p>
       </div>
 
-      <div>
-        <p class="price"><u><%= chicken.price %>€ /night</u></p>
+<div class="low-text3">
+
+        <span class="noise-level"><% if chicken.gender == "male" %>
+                <% chicken.noise_level %>
+                  <% if chicken.noise_level == "low"%>
+                      <p>Noise: <i class="fa-solid fa-volume-off"></i></p>
+                  <% elsif chicken.noise_level == "medium"%>
+                    <p>Noise: <i class="fa-solid fa-volume-low"></i></p>
+                    <% else %>
+                      <p>Noise: <i class="fa-solid fa-volume-high"></i></p>
+                    <% end %>
+              <% else %>
+                  <% case chicken.egg_capacity %>
+                  <% when 1 %>
+                    <p> Eggs:
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% when 2 %>
+                    <p> Eggs:
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% when 3 %>
+                    <p> Eggs:
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% when 4 %>
+                    <p> Eggs:
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% when 5 %>
+                    <p> Eggs:
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    <i class="fa-solid fa-egg"></i>
+                    </p>
+                  <% end %>
+              <% end %>
+              </span>
+               <div>
+        <p class="price"><u><%= chicken.price %>€ /day</u></p>
       </div>
+</div>
+
 
     </div>
   </div>

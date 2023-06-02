@@ -1,12 +1,13 @@
-<div class="container new_view d-flex justify-content-center">
+<div data-controller="form" class="container new_view d-flex justify-content-center">
   <div class="row col-12 col-lg-8">
     <div class="card new p-5" style="font-family: 'Circular Std', sans-serif;">
       <%= simple_form_for (@chicken) do |f| %>
-        <%= f.input :gender, collection: ["male", "female"], id: "chicken_gender" %>
+        <%= f.input :gender, collection: ["male", "female"], input_html: {data: {form_target: "gender", action: "click->form#checkGender"}}%>
         <%= f.input :breed, collection: ["Andalusian", "Brahma", "Brakel", "Dutch Bantam", "Hamburgh"] %>
+        <%= f.input :name %>
         <%= f.input :age %>
-        <%= f.input :egg_capacity, collection: [1, 2, 3, 4, 5], id: "chicken_egg_capacity" %>
-        <%= f.input :noise_level, collection: ["low", "medium", "high"], id: "chicken_noise_level" %>
+        <%= f.input :egg_capacity, collection: [1, 2, 3, 4, 5],  wrapper_html: {data: {form_target: "egg"}}%>
+        <%= f.input :noise_level, collection: ["low", "medium", "high"],  wrapper_html: {data: {form_target: "noise"}}%>
         <%= f.input :price %>
         <%= f.input :address,
                     input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
@@ -15,34 +16,10 @@
         <%= f.input :description %>
         <%= f.input :photo, as: :file %>
         <div class="first-button-wrapper">
-          <%= f.submit "Add chicken", class: "btn btn-warning first-button" %>
-          <%= link_to "Cancel", chickens_path, class: "btn btn-secondary text-decoration-none first-button"%>
+          <%= link_to "Cancel", chickens_path, class: "btn text-decoration-none first-button", style: "background-color: #B7B7B7"%>
+          <%= f.submit "Add chicken", class: "btn first-button", style: "background-color: #FBC209" %>
         </div>
       <% end %>
     </div>
   </div>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    var genderSelect = document.getElementById('chicken_gender');
-    var eggCapacityInput = document.getElementById('chicken_egg_capacity');
-    var noiseLevelInput = document.getElementById('chicken_noise_level');
-
-    function toggleInputs() {
-      if (genderSelect.value === 'male') {
-        eggCapacityInput.style.display = 'none';
-        noiseLevelInput.style.display = 'block';
-      } else if (genderSelect.value === 'female') {
-        eggCapacityInput.style.display = 'block';
-        noiseLevelInput.style.display = 'none';
-      } else {
-        eggCapacityInput.style.display = 'block';
-        noiseLevelInput.style.display = 'block';
-      }
-    }
-
-    genderSelect.addEventListener('change', toggleInputs);
-    toggleInputs(); // Call initially to set the initial visibility based on the selected gender
-  });
-</script>
