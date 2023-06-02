@@ -2,15 +2,16 @@
 <div id="index-booking">
   <div class="container">
    <h2>My bookings</h2>
+   <div class="chicken-grid">
     <% @bookings.each do |booking| %>
-      <div class="big-card mt-3">
-        <div class="cards">
-          <div class="chicken-row row">
-              <div id="cardv2">
-                <%= link_to booking_path(booking.id) do %>
-                  <div class="card">
-                    <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.chicken.photo.key, height: 300, crop: :fill %>')">
+
+
+              <div id="cardv2-chicken">
+               <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path booking.chicken.photo.key, height: 300, crop: :fill %>')">
                     </div>
+                <%#= link_to booking_path(booking.id) do %>
+                  <div class="card">
+
                     <div class="card-body">
                       <div class="top-text">
                         <h5 class="card-title"><strong><%= booking.chicken.name %></strong></h5>
@@ -32,13 +33,14 @@
 
                     </div>
                   </div>
-                <% end %>
+                <%# end %>
               </div>
-          </div>
-        </div>
-      </div>
+
+
     <% end %>
-    <div class="legend">
+
+  </div>
+  <div class="legend">
       <%# <p>Pending: <i class="fa-solid fa-circle-exclamation"></i></p> %>
       <p>Pending: <i class="fa-solid fa-spinner"></i></p>
       <p>Recject: <i class="fa-solid fa-circle-xmark"></i></p>

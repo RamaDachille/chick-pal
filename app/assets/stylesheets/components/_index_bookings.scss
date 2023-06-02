@@ -4,6 +4,20 @@
   margin: 100px;
 }
 
+#cardv2-chicken{
+  display: flex;
+    border: 1px solid grey;
+    max-width: 68%;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.chicken-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
 .chicken-row {
   overflow: hidden;
   height: 240px;
@@ -18,14 +32,17 @@
 .card-img {
   height: 120px;
   width: 120px;
-  object-fit: cover;
-  margin-left: -14px;
-  border-radius: 12px 0px 0px 12px;
+  background-position: center;
+    background-size: cover;
+  // object-fit: cover;
+  // margin-left: -14px;
+  // border-radius: 12px 0px 0px 12px;
 }
 
 .card-body {
   height: 120px;
   color: rgb(49, 47, 47);
+  margin-left: 10px;
 
 }
 
