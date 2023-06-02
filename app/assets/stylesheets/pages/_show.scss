@@ -1,4 +1,5 @@
 #show {
+  margin-top: 150px;
 
 .container {
   font-family: 'Circular Std', sans-serif;
@@ -123,6 +124,9 @@ align-items: center;
   align-items: center;
   width: 45%;
   position: relative;
+  margin-top: 32px;
+  border-radius: 12px;
+  border: #FFFFFF;
   .name{
     position: absolute;
     top: 4px;
@@ -147,11 +151,14 @@ align-items: center;
 
   .location{
     position: absolute;
+    top: 60px;
   }
   .price{
     position: absolute;
     top: 11px;
     right: 11px;
+    font-size: 16px;
+    font-weight: bold;
   }
   .status{
     .fa-circle-check{
@@ -198,5 +205,6 @@ align-items: center;
 .booking-container {
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 }

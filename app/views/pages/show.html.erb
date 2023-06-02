@@ -1,35 +1,39 @@
-<div class="container mt-5">
-<br>
-<br>
-<div class='booking-container'>
-  <% @bookings.each do |booking| %>
-    <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <span class="name">Chicken's name</span>
-        <span class="dates">
-          <i class="fa-regular fa-calendar"></i>
-          <%= booking.start_date.strftime("%d %b") %> – <%= booking.end_date.strftime("%d %b %Y") %>
-          <% a = booking.start_date %>
-          <% b = booking.end_date %>
-          <span class="days"> <%= b.mjd - a.mjd %> days </span>
-        </span>
-        <span class="booker"><i class="fa-regular fa-user"></i> Booker's name </span>
-        <span class="location"> <i class="fa-regular fa-map"></i> Location</span>
-        <span class="price"><i class="fa-solid fa-sack-dollar"></i> Revenue</span>
-        <span class="status">
-          <i class="fa-regular fa-circle-check"></i>
-
-          <i class="fa-regular fa-circle-xmark"></i>
+<div id="show" class="container">
+  <div class='booking-container'>
+    <% @bookings.each do |booking| %>
+      <div class="card-product">
+        <%= cl_image_tag booking.chicken.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-product-infos">
+          <span class="name"><%= booking.chicken.name %></span>
+          <span class="dates">
+            <i class="fa-regular fa-calendar"></i>
+            <%= booking.start_date.strftime("%d %b") %> – <%= booking.end_date.strftime("%d %b %Y") %>
+            <% a = booking.start_date %>
+            <% b = booking.end_date %>
+            <span class="days"> <%= b.mjd - a.mjd %> days </span>
           </span>
+          <span class="booker"><i class="fa-regular fa-user"></i> <%= booking.user.first_name %> <%= booking.user.last_name %></span>
+          <span class="location"> <i class="fa-regular fa-map"></i> <%= Faker::Address.street_name %></span>
+          <span class="price"><i class="fa-solid fa-sack-dollar"></i> <%= booking.chicken.price * (b.mjd - a.mjd)%></span>
+          <span class="status">
+
+            <%= simple_form_for booking do |f| %>
+              <%= f.input :booking_status, as: :hidden, input_html: {value: "approved"}%>
+              <a onclick="this.closest('form').submit();return false;" >
+                <i class="fa-regular fa-circle-check"></i>
+              </a>
+            <% end %>
+
+
+            <%= simple_form_for booking do |f| %>
+              <%= f.input :booking_status, as: :hidden, input_html: {value: "denied"}%>
+               <a onclick="this.closest('form').submit();return false;" >
+                <i class="fa-regular fa-circle-xmark"></i>
+              </a>
+            <% end %>
+            </span>
+        </div>
       </div>
-    </div>
-    <div class="d-none">
-      <%= simple_form_for booking do |f| %>
-        <%= f.input :booking_status, collection: ["approved", "denied", "pending"] %>
-        <%= f.submit "Update", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+    <% end %>
+  </div>
 </div>

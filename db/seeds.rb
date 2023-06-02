@@ -8,6 +8,9 @@
 require 'faker'
 require "open-uri"
 
+Booking.destroy_all
+Chicken.destroy_all
+User.destroy_all
 
 # geochicken = Chicken.new(age: 5, breed: "Andalusian", egg_capacity: 4, gender: "male", noise_level: "low", user_id: 22, description: "Test 123", price: 15, name: "Test Chicken", address: "Rudi-Dutschke-Straße 26, 10969 Berlin")
 chicken_descriptions = [
