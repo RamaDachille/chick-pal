@@ -5,7 +5,7 @@ An Airbnb-inspired platform for renting chickens instead of apartments.
 
 ### Features
 Account creation, posting or renting chickens, managing bookings, and interactive search with a map view.
-  
-### Technologies
+
+### Technologies 
 MVC, JavaScript, Stimulus.js, Ruby, Ruby on Rails, HTML, SCSS, PostgreSQL, Heroku, APIs
 
