@@ -1,7 +1,7 @@
 # Chick-Pal
 An Airbnb-inspired platform for renting chickens instead of apartments. 
 
-[chick-pal.com](https://chick-pal.herokuapp.com)
+[chick-pal.com](https://chick-pal.herokuapp.com) 
 
 ### Features
 Account creation, posting or renting chickens, managing bookings, and interactive search with a map view.
