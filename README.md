@@ -8,3 +8,4 @@ Account creation, posting or renting chickens, managing bookings, and interactiv
 
 ### Technologies
 MVC, JavaScript, Stimulus.js, Ruby, Ruby on Rails, HTML, SCSS, PostgreSQL, Heroku, APIs
+-
