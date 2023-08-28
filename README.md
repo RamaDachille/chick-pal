@@ -7,7 +7,7 @@ Website Video on [Dribble](https://dribbble.com/shots/22382251-Chick-Pal-Rent-Ch
 
 ### Features
 Account creation, posting or renting chickens, managing bookings, and interactive search with a map view.
-
+ 
 ### Technologies 
 MVC, JavaScript, Stimulus.js, Ruby, Ruby on Rails, HTML, SCSS, PostgreSQL, Heroku, APIs 
  
