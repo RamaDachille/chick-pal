@@ -5,7 +5,7 @@ Live Website: [chick-pal.com](https://chick-pal.herokuapp.com)
 
 Website Video on [Dribble](https://dribbble.com/shots/22382251-Chick-Pal-Rent-Chickens)
 
-### Features
+### Features 
 Account creation, posting or renting chickens, managing bookings, and interactive search with a map view. 
  
 ### Technologies 
